@@ -22,12 +22,13 @@ The server prints the local address and normally opens http://127.0.0.1:8000/.
 Keep the terminal open while viewing the site. Press Ctrl+C to stop it.
 
 Use the local server rather than double-clicking index.html. The site uses
-root-relative page links and JavaScript-loaded animation/search assets.
+JavaScript-loaded animation/search assets that browsers block on file://.
 No npm installation or build step is needed.
 
 HOST THE WEBSITE
-Upload the contents of this folder to the root of any static web host.
-The homepage is index.html. Keep the folder structure intact so links,
+Upload the contents of this folder to any static web host. All links are
+relative, so it works at a domain root or in a subfolder (for example
+GitHub Pages at https://<user>.github.io/<repo>/). The homepage is index.html. Keep the folder structure intact so links,
 fonts, images, and animation assets continue to work. serve.py and the
 Mac/Windows launchers are only needed for local viewing.
 

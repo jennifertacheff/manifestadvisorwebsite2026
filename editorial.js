@@ -3,6 +3,9 @@
   const $ = (selector, root = document) => root ? root.querySelector(selector) : null;
   const $$ = (selector, root = document) => root ? [...root.querySelectorAll(selector)] : [];
   const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value));
+  // This script lives at the site root, so its URL tells us where the site is mounted (e.g. a GitHub Pages subpath).
+  const siteRoot = new URL('./', document.currentScript?.src || location.href);
+  const sparksPath = decodeURIComponent(new URL('sparks/', siteRoot).pathname).normalize('NFC');
   const body = document.body;
   if (!body || !body.classList.contains('editorial-page')) return;
 
@@ -274,9 +277,9 @@
     return data.flatMap(record => {
       if (!record || typeof record.title !== 'string' || typeof record.path !== 'string') return [];
       try {
-        const url = new URL(record.path, location.origin);
+        const url = new URL(record.path.replace(/^\//, ''), siteRoot);
         const path = decodeURIComponent(url.pathname).normalize('NFC');
-        if (url.origin !== location.origin || !path.startsWith('/sparks/') || !path.slice(8).replace(/\//g, '')) return [];
+        if (url.origin !== location.origin || !path.startsWith(sparksPath) || !path.slice(sparksPath.length).replace(/\//g, '')) return [];
         const key = path.replace(/\/$/, '');
         if (seen.has(key)) return [];
         seen.add(key);
@@ -352,7 +355,7 @@
     searchResults?.setAttribute('aria-busy', 'true');
     searchLoad = (async () => {
       try {
-        const response = await fetch('/assets/sparks/search-index.json', { credentials: 'same-origin', cache: 'no-cache' });
+        const response = await fetch(new URL('assets/sparks/search-index.json', siteRoot), { credentials: 'same-origin', cache: 'no-cache' });
         if (!response.ok) throw new Error('Search request failed');
         const records = prepareSearchIndex(await response.json());
         if (!records.length) throw new Error('Search index is empty');
