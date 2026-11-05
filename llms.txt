@@ -1,0 +1,37 @@
+# Manifest Advisors
+
+> Manifest Advisors is a strategy and growth advisory firm founded by Jennifer (Jen) Tacheff in October 2019. It works with founders, startups, venture funds, global companies, and mission-driven organizations at critical growth moments—launching a fund, scaling a company, or entering a new market.
+
+Key facts:
+
+- Name: Manifest Advisors (also shortened to "Manifest"). Tagline: "Your next move matters."
+- Founder: Jennifer Tacheff, a growth strategist, ecosystem builder, startup mentor, and executive coach. She was named a 2023 Techstars All-Star Mentor and has taught as a visiting lecturer at UC Berkeley's Haas School of Business.
+- Services: Growth & Go-to-Market, Funds & Fundraising, Brand & Storytelling, Leadership & Coaching, and Innovation & AI.
+- Engagements can take the form of strategic advice, coaching, a defined project, or fractional leadership (including fractional CMO and COO roles).
+- Engagements have included Google Global Accelerator, GoFundMe and Classy, Preston-Werner Ventures and ZEAL, and The Go Game and Weve.
+- Across clients: 600+ leaders served, 1,000+ products and innovations scouted, and $150M+ in funding and revenue.
+- Manifest Advisors is not a financial planning or investment advisory firm.
+
+## Start here
+
+- [Questions about Manifest Advisors](https://jennifertacheff.github.io/manifestadvisorwebsite2026/faq/): Short answers about the firm, its founder, services, clients, and how to work together.
+- [Meet Jen Tacheff](https://jennifertacheff.github.io/manifestadvisorwebsite2026/about/): Founder biography and full career history.
+- [Contact](https://jennifertacheff.github.io/manifestadvisorwebsite2026/contact/): Start a conversation, book a strategy session, or connect on LinkedIn.
+
+## Services
+
+- [Growth & Go-to-Market](https://jennifertacheff.github.io/manifestadvisorwebsite2026/services/growth-go-to-market/): Go-to-market strategy, growth and revenue, fractional leadership, and market entry and launches.
+- [Funds & Fundraising](https://jennifertacheff.github.io/manifestadvisorwebsite2026/services/funds-fundraising/): Fund positioning, fundraising narratives, ecosystem and partnerships, and founder readiness.
+- [Brand & Storytelling](https://jennifertacheff.github.io/manifestadvisorwebsite2026/services/brand-storytelling/): Positioning and messaging, founder and brand stories, and campaigns and experiences.
+- [Leadership & Coaching](https://jennifertacheff.github.io/manifestadvisorwebsite2026/services/leadership-coaching/): Founder coaching, executive coaching, strategy sessions, and ongoing partnership.
+- [Innovation & AI](https://jennifertacheff.github.io/manifestadvisorwebsite2026/services/innovation-ai/): Innovation strategy, AI go-to-market, programs and convenings, and human-centered ecosystems.
+
+## Work and proof
+
+- [Selected work](https://jennifertacheff.github.io/manifestadvisorwebsite2026/work/): Case studies across growth, venture, brand, leadership, innovation, and social impact.
+- [Testimonials](https://jennifertacheff.github.io/manifestadvisorwebsite2026/testimonials/): 28 recommendations from founders, executives, and collaborators.
+
+## Optional
+
+- [Sparks](https://jennifertacheff.github.io/manifestadvisorwebsite2026/sparks/): Articles on speaking, founder mentorship, AI and human connection, and working with Manifest.
+- [Five starting points for your next move](https://jennifertacheff.github.io/manifestadvisorwebsite2026/sparks/your-next-move/): How an engagement with Manifest typically begins.

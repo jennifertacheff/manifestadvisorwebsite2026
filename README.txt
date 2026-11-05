@@ -78,3 +78,14 @@ depends on moving this site onto a domain Manifest owns:
    founder-coaching/ redirect the old Squarespace URLs to their new pages so
    their search history carries over. Keep them.
 5. Verify the domain in Google Search Console and submit sitemap.xml.
+
+AI ANSWER ENGINES (ChatGPT, Perplexity, Claude, Google AI Overviews)
+- faq/ answers the questions people ask about Manifest in plain, quotable
+  sentences. Its FAQPage JSON-LD repeats the visible answers word for word;
+  edit both together so they never disagree.
+- llms.txt is a plain-text summary of the firm with links to the key pages.
+  Update its facts when the site's facts change.
+- robots.txt allows every crawler, including AI crawlers such as GPTBot,
+  OAI-SearchBot, ClaudeBot, and PerplexityBot. Keep it that way.
+- Microsoft Copilot, and in part ChatGPT search, draw on Bing's index, so
+  also verify the site in Bing Webmaster Tools and submit sitemap.xml there.
