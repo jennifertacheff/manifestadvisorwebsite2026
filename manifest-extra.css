@@ -114,3 +114,9 @@
 @media(max-width:800px){.manifest-home .hero-title{font-size:clamp(36px,11vw,74px)}.manifest-contact-layout .contact-page-copy{font-size:22px;line-height:1.4}}
 
 .case-hero-graphic figcaption{font:11px/1.5 var(--mono);margin-top:14px}.case-hero-graphic figcaption:empty{display:none}
+.testimonial-person{display:flex;align-items:center;gap:16px}
+.testimonial-person>div{min-width:0}
+.testimonial-person .testimonial-avatar,.quote-attribution .testimonial-avatar{float:none;flex:none;width:56px;height:56px;margin:0;border-radius:50%;object-fit:cover;background:var(--manifest-rule)}
+.testimonial-feature .quote-attribution{flex-direction:row;align-items:center;gap:18px}
+.testimonial-feature .quote-attribution>div{min-width:0}
+.testimonial-feature .quote-attribution .testimonial-avatar{width:64px;height:64px}
