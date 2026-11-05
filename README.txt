@@ -1,7 +1,7 @@
 MANIFEST ADVISORS — COMPLETE HTML WEBSITE
 
 This archive contains the complete exported website: all 35 content pages,
-114 legacy redirects, CSS, JavaScript, images, logos, local fonts, 3D assets,
+120 legacy redirects, CSS, JavaScript, images, logos, local fonts, 3D assets,
 and Lottie animations.
 
 VIEW THE WEBSITE LOCALLY
@@ -54,3 +54,38 @@ SEO: every page carries canonical, Open Graph, Twitter card, and JSON-LD
 (schema.org) tags. The social share image is assets/og-image.png; its source
 is assets/og/og-image.html (render it at 1200x630 to regenerate). The favicon
 set (assets/favicon.svg and the PNG sizes) comes from assets/og/favicon-preview.html.
+
+BRAND SEARCH ("manifest advisors" / "manifest advisor")
+The homepage title, description, and JSON-LD lead with "Manifest Advisors"
+and list "Manifest" and "Manifest Advisor" as alternate names. Keep the name
+written exactly "Manifest Advisors" in new copy and on outside profiles.
+
+Google shows a site name and favicon only for a domain or subdomain, not a
+subfolder like jennifertacheff.github.io/manifestadvisorwebsite2026/, and it
+only reads robots.txt at the root of a host. Ranking first for the brand
+depends on moving this site onto a domain Manifest owns:
+1. Replace the inquiry form first. The contact page and footer link to
+   https://www.manifestadviso.rs/contact-us, which is on Squarespace and goes
+   away when the domain moves.
+2. Point the domain at GitHub Pages (repo Settings > Pages > Custom domain)
+   and update the DNS records at the registrar.
+3. Swap the base URL everywhere, for example:
+       grep -rl 'https://jennifertacheff.github.io/manifestadvisorwebsite2026/' . \
+         | xargs sed -i '' 's#https://jennifertacheff.github.io/manifestadvisorwebsite2026/#https://www.manifestadviso.rs/#g'
+   Then remove the site's own domain from the Organization "sameAs" list in
+   index.html.
+4. contact-us/, home/, speaking/, growth-strategy/, coaching/, and
+   founder-coaching/ redirect the old Squarespace URLs to their new pages so
+   their search history carries over. Keep them.
+5. Verify the domain in Google Search Console and submit sitemap.xml.
+
+AI ANSWER ENGINES (ChatGPT, Perplexity, Claude, Google AI Overviews)
+- faq/ answers the questions people ask about Manifest in plain, quotable
+  sentences. Its FAQPage JSON-LD repeats the visible answers word for word;
+  edit both together so they never disagree.
+- llms.txt is a plain-text summary of the firm with links to the key pages.
+  Update its facts when the site's facts change.
+- robots.txt allows every crawler, including AI crawlers such as GPTBot,
+  OAI-SearchBot, ClaudeBot, and PerplexityBot. Keep it that way.
+- Microsoft Copilot, and in part ChatGPT search, draw on Bing's index, so
+  also verify the site in Bing Webmaster Tools and submit sitemap.xml there.

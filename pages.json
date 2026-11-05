@@ -173,5 +173,10 @@
     "path": "/testimonials/",
     "title": "Testimonials",
     "description": "Read 28 recommendations from the founders, executives, and collaborators who have worked with Jennifer Tacheff."
+  },
+  {
+    "path": "/faq/",
+    "title": "Questions about Manifest Advisors",
+    "description": "Answers to common questions about Manifest Advisors: what the firm does, who founded it, who it works with, how engagements start, and how to get in touch."
   }
 ]
