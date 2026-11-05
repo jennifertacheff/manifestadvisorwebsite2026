@@ -8,8 +8,9 @@
 .logo-wall .logo-tile img{filter:grayscale(1) brightness(0);opacity:.78;max-height:52px;max-width:160px;width:78%;object-fit:contain}
 .logo-wall .logo-tile:hover img{opacity:1}
 .capability-card .cap-title{font-size:clamp(22px,2vw,32px)}
-.manifest-home .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
-.manifest-home .stat-value{font-size:clamp(68px,7.4vw,125px)}
+.manifest-home .stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+.manifest-home .stat-value{font-size:clamp(68px,6.2vw,110px)}
+@media(min-width:801px) and (max-width:1200px){.manifest-home .stats{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:60px}}
 .manifest-home .stat-label{max-width:240px;display:block}
 .manifest-home #studio-name{font-size:clamp(30px,3.3vw,60px);letter-spacing:-.045em;max-width:460px}
 .manifest-home .studio-heading{align-items:flex-end;gap:14px}
