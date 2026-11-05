@@ -21,21 +21,24 @@ On Windows, you can also use:
 The server prints the local address and normally opens http://127.0.0.1:8000/.
 Keep the terminal open while viewing the site. Press Ctrl+C to stop it.
 
-Use the local server rather than double-clicking index.html. The site uses
-JavaScript-loaded animation/search assets that browsers block on file://.
+You can also double-click index.html: pages, navigation, and the 3D hero
+shape all work from disk. Browsers block the Sparks search and the service
+page animations on file://, so use the local server to see those.
 No npm installation or build step is needed.
 
 HOST THE WEBSITE
 Upload the contents of this folder to any static web host. All links are
 relative, so it works at a domain root or in a subfolder (for example
-GitHub Pages at https://<user>.github.io/<repo>/). The homepage is index.html. Keep the folder structure intact so links,
+GitHub Pages at https://<user>.github.io/<repo>/). The homepage is
+index.html. Keep the folder structure intact so links,
 fonts, images, and animation assets continue to work. serve.py and the
 Mac/Windows launchers are only needed for local viewing.
 
 EDIT THE WEBSITE
 Page content is in the HTML files. Shared styling is in the CSS files, and
 interactive behavior is in the JavaScript files. assets/ contains images,
-logos, fonts, 3D models, and animation data. pages.json is the Sparks search
+logos, fonts, and animation data. The homepage's 3D hero shape is embedded
+(base64 GLB) in assets/hero.js. pages.json is the Sparks search
 index. manifest-data.js contains homepage carousel and testimonial data.
 
 The contact actions link to Manifest's existing inquiry page, booking

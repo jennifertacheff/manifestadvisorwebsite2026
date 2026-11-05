@@ -53,4 +53,19 @@
   if (!('IntersectionObserver' in window)) {
     document.querySelectorAll('.reveal').forEach(node => node.classList.add('is-visible'));
   }
+
+  // When index.html is opened straight from disk there is no server to map folder links
+  // like ../work/ to ../work/index.html, so do it at click time (covers links added by scripts too).
+  if (location.protocol === 'file:') {
+    const openFolderIndex = event => {
+      const link = event.target.closest?.('a[href]');
+      if (!link) return;
+      const url = new URL(link.href);
+      if (url.protocol !== 'file:' || !url.pathname.endsWith('/')) return;
+      url.pathname += 'index.html';
+      link.href = url.href;
+    };
+    document.addEventListener('click', openFolderIndex, true);
+    document.addEventListener('auxclick', openFolderIndex, true);
+  }
 })();
