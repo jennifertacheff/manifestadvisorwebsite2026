@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://manifest-advisors-hova.kaitlynhova.chatgpt.site/sitemap.xml
+Sitemap: https://jennifertacheff.github.io/manifestadvisorwebsite2026/sitemap.xml
