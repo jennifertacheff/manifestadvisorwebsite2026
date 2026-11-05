@@ -1,0 +1,14 @@
+{
+  "name": "Manifest Advisors",
+  "short_name": "Manifest",
+  "description": "Growth, fundraising, storytelling, leadership, and innovation. Manifest Advisors helps ambitious founders and teams turn vision into progress.",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#f5f0eb",
+  "theme_color": "#f5f0eb",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

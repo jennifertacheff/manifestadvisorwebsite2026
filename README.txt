@@ -47,3 +47,10 @@ access; the site assets are included locally.
 
 If you host this export on a different domain, update the canonical and Open
 Graph URLs in the HTML files, plus sitemap.xml and robots.txt, for that domain.
+They currently point to the GitHub Pages site at
+https://jennifertacheff.github.io/manifestadvisorwebsite2026/.
+
+SEO: every page carries canonical, Open Graph, Twitter card, and JSON-LD
+(schema.org) tags. The social share image is assets/og-image.png; its source
+is assets/og/og-image.html (render it at 1200x630 to regenerate). The favicon
+set (assets/favicon.svg and the PNG sizes) comes from assets/og/favicon-preview.html.
