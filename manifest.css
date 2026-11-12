@@ -5,11 +5,12 @@
   --paper: #f5f0eb;
   --ink: #090909;
   --manifest-muted: #57534f;
-  --manifest-pink: #f6beae;
-  --manifest-lilac: #bd95ff;
-  --manifest-green: #697d55;
-  --manifest-cyan: #0ebdc9;
-  --manifest-blue: #2e68ff;
+  --manifest-coral: #ff6b5e;
+  --manifest-lilac: #a98bf5;
+  --manifest-grass: #4cc36f;
+  --manifest-lagoon: #3fc1d0;
+  --manifest-cobalt: #3d68f5;
+  --manifest-sun: #ffe15a;
   --manifest-rule: rgba(9, 9, 9, .2);
 }
 
@@ -168,7 +169,7 @@
 .testimonials-section, .testimonials-section.awards {
   display: block;
   padding-block: clamp(88px, 9vw, 145px);
-  background: var(--manifest-pink);
+  background: var(--manifest-coral);
 }
 .testimonials-section .section-heading { margin-bottom: 56px; }
 .testimonial-feature {
@@ -282,7 +283,7 @@
 .career-item summary::after { content: "+"; position: absolute; right: 5px; top: 27px; width: 30px; font-size: 33px; line-height: 1; text-align: center; transition: transform .35s var(--ease); }
 .career-item[open] summary::after { transform: rotate(45deg); }
 .career-item summary:hover { background: rgba(9, 9, 9, .025); }
-.career-item summary:focus-visible { outline: 2px solid var(--manifest-blue); outline-offset: 4px; }
+.career-item summary:focus-visible { outline: 2px solid var(--manifest-cobalt); outline-offset: 4px; }
 .career-period { font: 11px/1.6 var(--mono); color: var(--manifest-muted); padding-top: 5px; }
 .career-role { display: block; font-size: clamp(22px, 2.1vw, 32px); line-height: 1.13; letter-spacing: -.025em; }
 .career-company { display: block; font-size: 18px; line-height: 1.4; padding-top: 3px; }
@@ -339,7 +340,7 @@
 .case-facts dt, .case-facts h3, .case-facts .eyebrow { margin-bottom: 12px; font: 11px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .06em; }
 .case-facts dd, .case-facts p { margin: 0; font-size: 20px; line-height: 1.4; letter-spacing: -.015em; }
 .case-facts a { text-decoration: underline; text-underline-offset: 4px; }
-.case-quote { margin: 70px 0; padding: clamp(30px, 5vw, 72px); background: var(--manifest-pink); border-radius: 3px; }
+.case-quote { margin: 70px 0; padding: clamp(30px, 5vw, 72px); background: var(--manifest-coral); border-radius: 3px; }
 .case-quote blockquote, blockquote.case-quote { font-size: clamp(26px, 3vw, 46px); line-height: 1.2; letter-spacing: -.025em; }
 .case-quote blockquote { margin: 0; }
 .case-quote figcaption, .case-quote cite, .case-quote .quote-attribution { display: block; margin-top: 28px; font-size: 16px; line-height: 1.4; font-style: normal; letter-spacing: 0; }

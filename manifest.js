@@ -1,6 +1,83 @@
 'use strict';
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  const ribbon = document.querySelector('.trust-carousel');
+  if (ribbon) {
+    const track = ribbon.querySelector('.trust-track');
+    const copy = ribbon.querySelector('.trust-group').cloneNode(true);
+    copy.setAttribute('aria-hidden', 'true');
+    copy.setAttribute('inert', '');
+    copy.removeAttribute('aria-label');
+    track.append(copy);
+    ribbon.classList.add('is-animated');
+    const pause = ribbon.querySelector('.trust-pause');
+    pause.hidden = false;
+    let locallyPaused = false;
+    const syncMotion = () => {
+      const paused = locallyPaused || reduce.matches || document.body.classList.contains('motion-paused');
+      ribbon.classList.toggle('is-paused', paused);
+      pause.setAttribute('aria-pressed', String(paused));
+      pause.setAttribute('aria-label', paused ? 'Resume logo carousel' : 'Pause logo carousel');
+      pause.querySelector('[data-trust-pause-label]').textContent = paused ? 'Resume' : 'Pause';
+      pause.querySelector('[aria-hidden]').textContent = paused ? '▶' : 'Ⅱ';
+      pause.hidden = reduce.matches || document.body.classList.contains('motion-paused');
+    };
+    pause.addEventListener('click', () => { locallyPaused = !locallyPaused; syncMotion(); });
+    reduce.addEventListener('change', syncMotion);
+    new MutationObserver(syncMotion).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    syncMotion();
+  }
+  // Story cards are authored in HTML so every story remains readable without JavaScript.
+  const stories = document.querySelector('.project-stories');
+  if (stories) {
+    const cards = [...stories.querySelectorAll('.story-card')];
+    const previousPreview = stories.querySelector('.story-preview-prev');
+    const nextPreview = stories.querySelector('.story-preview-next');
+    let activeStory = 0;
+    const showStory = (index, announce = true) => {
+      activeStory = (index + cards.length) % cards.length;
+      cards.forEach((card, i) => {
+        const active = i === activeStory;
+        card.classList.toggle('is-active', active);
+        card.inert = !active;
+        card.setAttribute('aria-hidden', String(!active));
+      });
+      [[previousPreview, -1], [nextPreview, 1]].forEach(([button, direction]) => {
+        const card = cards[(activeStory + direction + cards.length) % cards.length];
+        button.querySelector('img').src = card.querySelector('.story-logo').src;
+        button.setAttribute('aria-label', 'Show ' + card.dataset.storyName + ' story');
+      });
+      stories.querySelector('.stories-count').textContent = String(activeStory + 1).padStart(2, '0') + ' / ' + String(cards.length).padStart(2, '0');
+      if (announce) stories.querySelector('[data-story-status]').textContent = cards[activeStory].dataset.storyName + ', project ' + (activeStory + 1) + ' of ' + cards.length;
+    };
+    stories.querySelectorAll('[data-story-prev]').forEach(button => button.addEventListener('click', () => showStory(activeStory - 1)));
+    stories.querySelectorAll('[data-story-next]').forEach(button => button.addEventListener('click', () => showStory(activeStory + 1)));
+    stories.addEventListener('keydown', event => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      const focusInCard = event.target.closest('.story-card');
+      showStory(event.key === 'Home' ? 0 : event.key === 'End' ? cards.length - 1 : activeStory + (event.key === 'ArrowRight' ? 1 : -1));
+      if (focusInCard) cards[activeStory].querySelector('.story-read').focus({ preventScroll: true });
+    });
+    let touchStart = null;
+    const viewport = stories.querySelector('.stories-viewport');
+    viewport.addEventListener('touchstart', event => {
+      touchStart = event.touches.length === 1 && !event.target.closest('a, button') ? { x: event.touches[0].clientX, y: event.touches[0].clientY } : null;
+    }, { passive: true });
+    viewport.addEventListener('touchend', event => {
+      if (!touchStart) return;
+      const dx = event.changedTouches[0].clientX - touchStart.x;
+      const dy = event.changedTouches[0].clientY - touchStart.y;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.3) showStory(activeStory + (dx < 0 ? 1 : -1));
+      touchStart = null;
+    }, { passive: true });
+    viewport.addEventListener('touchcancel', () => { touchStart = null; }, { passive: true });
+    showStory(0, false);
+    stories.classList.add('is-ready');
+    stories.querySelector('.stories-controls').hidden = false;
+    previousPreview.hidden = nextPreview.hidden = false;
+  }
+
   const quote = document.getElementById('featured-quote');
   const quotes = window.MANIFEST_TESTIMONIALS || [];
   let current = 0;
