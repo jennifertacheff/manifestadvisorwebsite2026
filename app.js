@@ -6,19 +6,11 @@
   let savedMotion=false;try{savedMotion=sessionStorage.getItem('manifest-motion-paused')==='true'}catch(_){}
   let paused = reducedQuery.matches || savedMotion;
   let heroVisible = true;
-  let studioVisible = false;
-  let studioPaused = false;
-  let studioHover = false;
-  let studioFocused = false;
   let awardsVisible = false;
   let awardIndex = 0;
   let lastAward = performance.now();
   let headlineIndex = 0;
-  let studioIndex = 0;
   let lastHeadline = performance.now();
-  let lastSlide = performance.now();
-  let slideBusy = false;
-  let slideGeneration = 0;
   let capCloseTimer;
   const hero = $('.hero');
   const heroContent = $('.hero-content');
@@ -49,7 +41,6 @@
     if (paused) $$('.reveal').forEach(el => el.classList.add('is-visible'));
     window.dispatchEvent(new CustomEvent('motionchange', { detail: { paused } }));
     lastHeadline = performance.now();
-    lastSlide = performance.now();
     queueScroll();
   }
   motionButton.addEventListener('click', () => setMotion(!paused));
@@ -59,12 +50,10 @@
   const visibilityObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.target === hero) heroVisible = entry.isIntersecting;
-      if (entry.target.id === 'studios') studioVisible = entry.isIntersecting;
       if (entry.target.classList.contains('awards')) awardsVisible = entry.isIntersecting;
     });
   }, {threshold:0});
   visibilityObserver.observe(hero);
-  visibilityObserver.observe($('#studios'));
   visibilityObserver.observe($('.awards'));
 
   const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
@@ -100,12 +89,7 @@
       const r = statement.getBoundingClientRect();
       const p = Math.max(0, Math.min(1, (vh * .88 - r.top) / (vh * .58)));
       wordEls.forEach((el,i) => el.style.setProperty('--word-opacity', String(.18 + .82 * Math.max(0,Math.min(1,p*1.35 - i/words.length*.35)))));
-      if (studioVisible && innerWidth > 560) {
-        const box = $('#studios').getBoundingClientRect();
-        const progress = Math.max(-1, Math.min(1,(vh*.5-box.top)/(vh+box.height)));
-        $('.studio-photo.portrait').style.setProperty('--parallax',(progress*-50)+'px');
-        $('.studio-photo.landscape').style.setProperty('--parallax',(progress*28)+'px');
-      }
+
       if (innerWidth <= 560 || matchMedia('(pointer: coarse)').matches) {
         const cards = $$('.capability-card');
         let active = null;
@@ -230,44 +214,6 @@
   });
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){setCapMenu(false);setMobileMenu(false);if(langMenu){langMenu.hidden=true;langButton?.setAttribute('aria-expanded','false')}}});
 
-  const slides = window.MANIFEST_SLIDES;
-  function loadFrame(stage,src,alt,generation) {
-    const image = new Image();image.alt=alt;image.className='';image.decoding='async';image.src='./assets/'+src;
-    const reveal=()=>{
-      if(generation!==slideGeneration)return;
-      const old=$$('img',stage);stage.append(image);
-      requestAnimationFrame(()=>requestAnimationFrame(()=>{image.classList.add('active');old.forEach(im=>im.classList.remove('active'))}));
-      setTimeout(()=>old.forEach(im=>im.remove()),950);
-    };
-    if(image.complete)reveal();else image.addEventListener('load',reveal,{once:true});
-  }
-  function showSlide(index,manual=false) {
-    if(slideBusy)return;
-    slideBusy=true;studioIndex=(index+slides.length)%slides.length;
-    const generation=++slideGeneration;
-    const s=slides[studioIndex];const title=$('#studio-name');title.classList.add('switching');
-    setTimeout(()=>{title.textContent=s.name;title.classList.remove('switching');$('#slide-current').textContent=String(studioIndex+1).padStart(2,'0')},paused?0:220);
-    loadFrame($('#portrait-stage'),s.portrait,s.alt,generation);
-    $('#studio-description').textContent=s.description;$('#studio-case-link').href=s.href;
-    loadFrame($('#landscape-stage'),s.landscape,s.alt,generation);
-    if(manual)$('#studio-announcement').textContent=s.name+', project '+(studioIndex+1)+' of 4';
-    lastSlide=performance.now();setTimeout(()=>{slideBusy=false},950);
-  }
-  $('#studio-prev').addEventListener('click',()=>showSlide(studioIndex-1,true));
-  $('#studio-next').addEventListener('click',()=>showSlide(studioIndex+1,true));
-  $$('[data-next-slide]').forEach(el=>el.addEventListener('click',()=>showSlide(studioIndex+1,true)));
-  $('#studio-pause').addEventListener('click',()=>{
-    studioPaused=!studioPaused;$('#studio-pause').setAttribute('aria-pressed',String(studioPaused));$('#studio-pause').setAttribute('aria-label',studioPaused?'Play project slideshow':'Pause project slideshow');$('#studio-pause').textContent=studioPaused?'▷':'Ⅱ';lastSlide=performance.now();
-  });
-  $('#studios').addEventListener('pointerenter',()=>studioHover=true);
-  $('#studios').addEventListener('pointerleave',()=>{studioHover=false;lastSlide=performance.now()});
-  $('#studios').addEventListener('focusin',()=>studioFocused=true);
-  $('#studios').addEventListener('focusout',e=>{if(!$('#studios').contains(e.relatedTarget)){studioFocused=false;lastSlide=performance.now()}});
-  $('#studios').addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();showSlide(studioIndex+1,true)}if(e.key==='ArrowLeft'){e.preventDefault();showSlide(studioIndex-1,true)}});
-  let touchStart;
-  $('.studio-photo.landscape').addEventListener('touchstart',e=>{touchStart=e.changedTouches[0].clientX},{passive:true});
-  $('.studio-photo.landscape').addEventListener('touchend',e=>{if(touchStart==null)return;const d=e.changedTouches[0].clientX-touchStart;if(Math.abs(d)>50)showSlide(studioIndex+(d<0?1:-1),true);touchStart=null},{passive:true});
-
   const awardNames=['leadership','products','platforms','brands','data'];
   function nextAward(){
     const orbit=$('.award-orbit');
@@ -283,10 +229,9 @@
     if(paused||document.hidden||mobileMenu.classList.contains('open'))return;
     const now=performance.now();
     if(heroVisible&&now-lastHeadline>4700){nextHeadline();lastHeadline=now+300}
-    if(studioVisible&&!studioPaused&&!studioHover&&!studioFocused&&now-lastSlide>6500)showSlide(studioIndex+1);
     if(awardsVisible&&now-lastAward>2700){nextAward();lastAward=now}
   },200);
-  document.addEventListener('visibilitychange',()=>{lastHeadline=performance.now();lastSlide=performance.now()});
+  document.addEventListener('visibilitychange',()=>{lastHeadline=performance.now()});
   setMotion(paused);
   updateScroll();
 })();

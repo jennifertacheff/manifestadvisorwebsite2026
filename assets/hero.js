@@ -3825,20 +3825,20 @@ const heroModelURL = 'data:model/gltf-binary;base64,Z2xURgIAAABUmQAAtAkAAEpTT057
 const heroHost = document.getElementById('hero-art');
 if (heroHost) {
   const heroReduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const heroPalette = ['#f6beae', '#bd95ff', '#677a53', '#2e68ff', '#0ebdc9', '#ffe449'];
+  const heroPalette = ['#ff6b5e', '#a98bf5', '#4cc36f', '#3d68f5', '#3fc1d0', '#ffe15a'];
   const heroFallback = document.createElement('div');
   heroFallback.className = 'hero-shape-fallback';
   heroFallback.style.cssText = 'position:absolute;inset:0;pointer-events:none;transition:opacity .6s ease;';
-  heroFallback.innerHTML = '<svg aria-hidden="true" viewBox="-350 -350 700 700" style="position:absolute;left:50%;top:43%;width:min(660px,80vw);height:min(660px,80vw);transform:translate(-50%,-50%);overflow:visible"><path fill="#bd95ff" d="M -210 -210 L 150 -260 L 275 130 L -120 260 L -260 70 Z" /></svg>';
+  heroFallback.innerHTML = '<svg aria-hidden="true" viewBox="-350 -350 700 700" style="position:absolute;left:50%;top:43%;width:min(660px,80vw);height:min(660px,80vw);transform:translate(-50%,-50%);overflow:visible"><path fill="#a98bf5" d="M -210 -210 L 150 -260 L 275 130 L -120 260 L -260 70 Z" /></svg>';
   heroHost.append(heroFallback);
   const heroFallbackSvg = heroFallback.firstElementChild;
   const heroFallbackPath = heroFallbackSvg.firstElementChild;
   const heroScene = new Ym();
   const heroCamera = new yt(50, 1, .1, 30);
   heroCamera.position.set(0, 0, 5);
-  const heroMaterial = new wn({ color: '#bd95ff', side: Gt });
-  const heroCurrentColor = new be('#bd95ff');
-  const heroTargetColor = new be('#bd95ff');
+  const heroMaterial = new wn({ color: '#a98bf5', side: Gt });
+  const heroCurrentColor = new be('#a98bf5');
+  const heroTargetColor = new be('#a98bf5');
   const heroCanvas = document.createElement('canvas');
   heroCanvas.setAttribute('aria-hidden', 'true');
   heroCanvas.style.cssText = 'position:absolute;inset:0;display:block;opacity:0;pointer-events:none;transition:opacity .6s ease;';

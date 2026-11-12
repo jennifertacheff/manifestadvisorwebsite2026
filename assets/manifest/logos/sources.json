@@ -1,0 +1,18 @@
+{
+  "google": "https://svgl.app/library/google-wordmark.svg",
+  "github": "https://svgl.app/library/github_wordmark_light.svg",
+  "adidas": "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/adidas.svg",
+  "nvidia": "https://svgl.app/library/nvidia-wordmark-light.svg",
+  "unitednations": "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/unitednations.svg",
+  "openai": "https://svgl.app/library/openai_wordmark_light.svg",
+  "harvard": "https://www.harvard.edu/wp-content/themes/core/assets/img/theme/branding-assets/footer-logo.svg",
+  "cambridge": "https://www.cam.ac.uk/themes/custom/fresh/images/interface/university_logo_white-01.svg",
+  "eu-digital": "https://digital-strategy.ec.europa.eu/themes/contrib/oe_theme/dist/ec/images/logo/negative/logo-ec--en.svg",
+  "haas": "https://haas.berkeley.edu/wp-content/themes/ccprototypev5/images/logo-blue.svg",
+  "leverhulme": "https://www.lcfi.ac.uk/wp-content/themes/lcfitheme/static/min/img/logo.svg",
+  "go-game": "https://www.thegogame.com/site-static/915ee7162a28ef13.png",
+  "convex": "https://www.convex.dev/_next/static/immutable/media/logo.389jibsodr711.svg",
+  "pwv": "https://pwv.com (inline SVG)",
+  "hustle": "https://www.hustle.com (inline SVG)",
+  "socialtrait": "https://socialtrait.com (inline SVG)"
+}
