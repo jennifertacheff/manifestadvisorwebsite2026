@@ -4,10 +4,23 @@
   const ribbon = document.querySelector('.trust-carousel');
   if (ribbon) {
     const track = ribbon.querySelector('.trust-track');
+    // Hover tint: a mask of each logo filled with a brand highlight color. Masks can't load
+    // over file://, so the tint is skipped there and logos only grow on hover.
+    if (location.protocol !== 'file:') {
+      ribbon.querySelectorAll('.trust-mark > img').forEach((img) => {
+        const tint = document.createElement('span');
+        tint.className = 'trust-tint';
+        tint.setAttribute('aria-hidden', 'true');
+        tint.style.setProperty('--logo-mask', `url("${img.src}")`);
+        img.after(tint);
+        img.parentElement.classList.add('has-tint');
+      });
+    }
     const copy = ribbon.querySelector('.trust-group').cloneNode(true);
     copy.setAttribute('aria-hidden', 'true');
-    copy.setAttribute('inert', '');
     copy.removeAttribute('aria-label');
+    // The duplicate set stays clickable for the mouse but out of the tab order.
+    copy.querySelectorAll('a').forEach((link) => link.setAttribute('tabindex', '-1'));
     track.append(copy);
     ribbon.classList.add('is-animated');
     const pause = ribbon.querySelector('.trust-pause');
