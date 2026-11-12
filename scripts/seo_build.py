@@ -69,8 +69,8 @@ PAGES = {
                    title='About Jen Tacheff, Founder',
                    description='Jennifer Tacheff founded Manifest Advisors in 2019. Growth strategist, executive coach, Techstars All-Star Mentor, and UC Berkeley Haas lecturer.'),
     'contact/': dict(kind='contact', crumb='Contact',
-                     title='Contact & Book a Strategy Session',
-                     description='Start a conversation with Manifest Advisors: book a strategy session with founder Jen Tacheff or connect with her on LinkedIn.'),
+                     title='Contact Jen Tacheff',
+                     description='Get in touch with Manifest Advisors: connect with founder Jen Tacheff on LinkedIn to talk growth strategy, fundraising, storytelling, and leadership.'),
     'faq/': dict(kind='faq', crumb='FAQ',
                  title='Frequently Asked Questions',
                  description='Answers about Manifest Advisors: what the firm does, who founded it, who it works with, how engagements start, and how it differs from similar names.'),
@@ -500,7 +500,7 @@ Several unrelated organizations use similar names. Manifest Advisors at {SITE_UR
 - [Home]({L('')}): Overview of Manifest Advisors, its five services, and selected client stories.
 - [FAQ]({L('faq/')}): Plain answers about what Manifest Advisors does, who founded it, who it works with, and how engagements start.
 - [About Jen Tacheff]({L('about/')}): Founder biography and full career history.
-- [Contact]({L('contact/')}): Book a strategy session or connect on LinkedIn.
+- [Contact]({L('contact/')}): Connect with Jen Tacheff on LinkedIn.
 
 ## Services
 

@@ -26,7 +26,7 @@ Several unrelated organizations use similar names. Manifest Advisors at manifest
 - [Home](https://manifestadviso.rs/): Overview of Manifest Advisors, its five services, and selected client stories.
 - [FAQ](https://manifestadviso.rs/faq/): Plain answers about what Manifest Advisors does, who founded it, who it works with, and how engagements start.
 - [About Jen Tacheff](https://manifestadviso.rs/about/): Founder biography and full career history.
-- [Contact](https://manifestadviso.rs/contact/): Book a strategy session or connect on LinkedIn.
+- [Contact](https://manifestadviso.rs/contact/): Connect with Jen Tacheff on LinkedIn.
 
 ## Services
 
