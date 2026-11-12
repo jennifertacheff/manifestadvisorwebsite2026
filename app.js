@@ -76,7 +76,7 @@
       const letter = document.createElement('span');
       letter.className = 'statement-letter';
       letter.textContent = character;
-      letter.style.setProperty('--letter-highlight', `var(--manifest-${statementColors[Math.floor(Math.random() * statementColors.length)]})`);
+      letter.style.setProperty('--letter-highlight', `var(--text-${statementColors[Math.floor(Math.random() * statementColors.length)]})`);
       span.append(letter);
     }
     visualCopy.append(span);

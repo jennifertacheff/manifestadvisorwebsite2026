@@ -54,3 +54,46 @@ html[data-theme="dark"] :is(.fact-source, .contact-portrait>figcaption span) { c
   .theme-toggle { margin-left: auto; margin-right: 16px; }
   .site-header .brand img { width: min(45vw, 210px); }
 }
+
+/* Contrast-safe text accents are separate from decorative brand fills. */
+:root {
+  --text-coral: #a83226; --text-lilac: #7050ad; --text-grass: #23743d;
+  --text-lagoon: #126f7b; --text-cobalt: #3156cc; --text-sun: #796000;
+  --control-border: #79716b;
+}
+html[data-theme="dark"] {
+  --text-coral: #ff6b5e; --text-lilac: #a98bf5; --text-grass: #4cc36f;
+  --text-lagoon: #3fc1d0; --text-cobalt: #809fff; --text-sun: #ffe15a;
+  --control-border: #948a82;
+}
+/* Bound the worst-case backdrop even when the animated object is black or white. */
+.manifest-home .hero-art { opacity: .3; }
+html[data-theme="dark"] .manifest-home .hero-art { opacity: .2; }
+.manifest-home .hero-content { opacity: 1 !important; }
+.about-statement .word { opacity: 1; }
+.card-number, .article-attribution, .recreation-credit { color: var(--manifest-muted); }
+.fact-source { opacity: 1; color: var(--ink); }
+html[data-theme="dark"] .fact-source { color: var(--ink); }
+html[data-theme="dark"] .capability-mobile-menu>a[aria-current="page"] { color: var(--ink); }
+.theme-toggle, .filter-bar button[data-filter], .story-read,
+.stories-controls button, .trust-pause { border-color: var(--control-border); }
+/* Two-tone rings stay visible against both accent panels and page surfaces. */
+a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible,
+.theme-toggle:focus-visible {
+  outline: 2px solid #090909; outline-offset: 3px;
+  box-shadow: 0 0 0 3px #f5f0eb, 0 0 0 5px #090909;
+}
+.search-input-row input::placeholder { color: #bdb5ae; }
+html[data-theme="dark"] .capability-card.is-peek {
+  --ink: #090909; --paper: #f5f0eb; color: #090909;
+}
+/* Muted text on saturated panels needs the same dark ink as the main copy. */
+:is(.testimonials-section, .case-cover, .case-quote, .manifest-project-note, .cap-hero) {
+  --manifest-muted: #090909;
+}
+html[data-theme="dark"] :is(.testimonials-section, .case-cover, .case-quote, .manifest-project-note, .cap-hero) {
+  --manifest-muted: #090909;
+}
+.skip-link { background: #090909; color: #f5f0eb; }
+.service-pill:hover, .service-pill:focus-visible { background: rgba(255,255,255,.18); }
+.spark-card:hover, .spark-card:focus-visible { background: var(--spark-accent); }
