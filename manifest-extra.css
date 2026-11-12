@@ -137,7 +137,7 @@
 @media(min-width:744px) and (max-width:1023px){.faq-item,.faq-cta{grid-template-columns:repeat(8,minmax(0,1fr))}.faq-question{grid-column:1/4;padding-right:16px;font-size:26px}.faq-answer{grid-column:4/9;font-size:22px}.faq-cta>.text-link{grid-column:4/9}}
 @media(max-width:743px){.faq-list{margin-top:48px;padding:0 16px}.faq-item,.faq-cta{display:block}.faq-item{padding:32px 0}.faq-cta{padding-bottom:80px}.faq-question{padding-right:0;margin-bottom:16px;font-size:28px}.faq-answer{font-size:20px}}
 
-/* Homepage trust ribbon: a continuous, gently undulating line of organizations. */
+/* Homepage trust ribbon: a continuously scrolling, straight line of organizations. */
 .manifest-trust.trust-carousel { padding: 64px 0 48px; overflow: hidden; }
 .trust-carousel-heading { position: relative; max-width: 940px; margin: 0 auto 16px; padding: 0 80px; text-align: center; }
 .trust-carousel-heading h2 { max-width: 690px; margin: auto; font-size: clamp(25px, 3vw, 42px); line-height: 1.16; font-weight: 400; letter-spacing: -.035em; text-wrap: balance; }
@@ -148,24 +148,20 @@
 .trust-window { overflow-x: auto; scrollbar-width: thin; padding-block: 12px; }
 .trust-track { display: flex; width: max-content; }
 .trust-group { display: flex; align-items: center; flex: 0 0 auto; list-style: none; padding: 0; margin: 0; }
-.trust-logo { flex: 0 0 220px; width: 220px; height: 186px; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.trust-logo { flex: 0 0 220px; width: 220px; height: 124px; display: flex; align-items: center; justify-content: center; padding: 20px; }
 .trust-logo img { display: block; width: auto; height: auto; max-width: 180px; max-height: 64px; object-fit: contain; filter: grayscale(1) brightness(0); opacity: .8; }
 .trust-name { max-width: 180px; text-align: center; font-size: 25px; font-weight: 600; line-height: 1.12; letter-spacing: -.04em; }
 .trust-more { text-align: center; font: 12px FeixenMono, monospace; color: var(--manifest-muted); margin-top: 8px; }
 .trust-carousel.is-animated .trust-window { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
 .trust-carousel.is-animated .trust-track { animation: trust-travel 140s linear infinite; will-change: transform; }
-.trust-carousel.is-animated .trust-logo { animation: trust-wave 20s ease-in-out infinite; animation-delay: var(--wave-delay); }
 @keyframes trust-travel { to { transform: translateX(-50%); } }
-@keyframes trust-wave { 0%, 100% { transform: translateY(-32px) rotate(-3deg); } 50% { transform: translateY(32px) rotate(3deg); } }
-.trust-carousel:is(:hover, :focus-within, .is-paused) .trust-track,
-.trust-carousel:is(:hover, :focus-within, .is-paused) .trust-logo { animation-play-state: paused; }
 .trust-carousel.is-paused .trust-window { overflow-x: auto; }
 .trust-carousel.is-paused .trust-track { animation: none; transform: none; }
 .trust-carousel.is-paused .trust-group[aria-hidden="true"] { display: none; }
 @media (max-width: 600px) {
   .manifest-trust.trust-carousel { padding-block: 44px 30px; }
   .trust-carousel-heading { padding-inline: 24px; }
-  .trust-logo { flex-basis: 180px; width: 180px; height: 164px; }
+  .trust-logo { flex-basis: 180px; width: 180px; height: 112px; }
   .trust-logo img { max-width: 140px; max-height: 56px; }
   .trust-name { font-size: 22px; }
 }
