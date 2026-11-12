@@ -33,5 +33,5 @@ Key facts:
 
 ## Optional
 
-- [Sparks](https://jennifertacheff.github.io/manifestadvisorwebsite2026/sparks/): Articles on speaking, founder mentorship, AI and human connection, and working with Manifest.
-- [Five starting points for your next move](https://jennifertacheff.github.io/manifestadvisorwebsite2026/sparks/your-next-move/): How an engagement with Manifest typically begins.
+- [Blog](https://jennifertacheff.github.io/manifestadvisorwebsite2026/blog/): Articles on speaking, founder mentorship, AI and human connection, and working with Manifest.
+- [Five starting points for your next move](https://jennifertacheff.github.io/manifestadvisorwebsite2026/blog/your-next-move/): How an engagement with Manifest typically begins.

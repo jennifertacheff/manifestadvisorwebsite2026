@@ -68,7 +68,20 @@
   const words = statement.textContent.trim().split(/\s+/);
   const readableCopy=document.createElement('span');readableCopy.className='sr-only';readableCopy.textContent=statement.textContent;
   const visualCopy=document.createElement('span');visualCopy.setAttribute('aria-hidden','true');
-  words.forEach((word,i)=>{const span=document.createElement('span');span.className='word';span.textContent=word;visualCopy.append(span);if(i<words.length-1)visualCopy.append(' ')});
+  const statementColors = ['coral', 'lilac', 'grass', 'lagoon', 'cobalt', 'sun'];
+  words.forEach((word, i) => {
+    const span = document.createElement('span');
+    span.className = 'word';
+    for (const character of word) {
+      const letter = document.createElement('span');
+      letter.className = 'statement-letter';
+      letter.textContent = character;
+      letter.style.setProperty('--letter-highlight', `var(--text-${statementColors[Math.floor(Math.random() * statementColors.length)]})`);
+      span.append(letter);
+    }
+    visualCopy.append(span);
+    if (i < words.length - 1) visualCopy.append(' ');
+  });
   statement.replaceChildren(readableCopy,visualCopy);
   const wordEls = $$('.word', statement);
   let scrollPending = false;

@@ -1,0 +1,99 @@
+:root { color-scheme: light; }
+.theme-toggle {
+  width: 44px; height: 44px; flex: 0 0 44px; border: 1px solid var(--manifest-rule);
+  border-radius: 50%; display: grid; place-items: center; margin-left: 18px;
+  color: var(--ink); background: var(--paper); cursor: pointer; position: relative; z-index: 81;
+}
+.theme-toggle[hidden] { display: none; }
+.theme-toggle:hover { border-color: var(--ink); }
+.theme-toggle:focus-visible { outline: 2px solid var(--manifest-lilac); outline-offset: 4px; }
+.theme-toggle svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.theme-toggle .theme-sun { display: none; }
+.site-header .utility-nav { margin-left: auto; }
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #181716; --ink: #f5f0eb; --card: #262422; --line: #514c48;
+  --manifest-muted: #bdb5ae; --manifest-rule: rgba(245,240,235,.24);
+}
+html[data-theme="dark"] body {
+  --editorial-surface: var(--paper) !important;
+  --page-surface: var(--paper) !important;
+  --header-color: var(--paper) !important;
+  --line: #514c48;
+  background: var(--paper); color: var(--ink);
+}
+html[data-theme="dark"] .site-header,
+html[data-theme="dark"] .site-header.scrolled { background: rgba(24,23,22,.96); }
+html[data-theme="dark"] .brand img { filter: invert(1); }
+html[data-theme="dark"] .theme-moon { display: none; }
+html[data-theme="dark"] .theme-toggle .theme-sun { display: block; }
+html[data-theme="dark"] .trust-logo img,
+html[data-theme="dark"] .logo-wall .logo-tile img { filter: grayscale(1) brightness(0) invert(1); }
+html[data-theme="dark"] .story-card,
+html[data-theme="dark"] .story-preview,
+html[data-theme="dark"] .ecosystem-section { background: var(--card); }
+html[data-theme="dark"] .story-preview:hover { background: #35312e; }
+html[data-theme="dark"] .cap-menu,
+html[data-theme="dark"] .sparks-search { --paper: #f5f0eb; color: #f5f0eb; }
+/* Keep dark lettering on the original saturated brand panels. */
+html[data-theme="dark"] :is(.cap-hero, .testimonials-section, .case-cover, .case-quote, .manifest-project-note),
+html[data-theme="dark"] .capability-card:hover,
+html[data-theme="dark"] .capability-card:focus-visible,
+html[data-theme="dark"] .capability-card.mobile-active,
+html[data-theme="dark"] .capability-sibling:hover,
+html[data-theme="dark"] .capability-sibling[aria-current="page"],
+html[data-theme="dark"] .spark-card:hover,
+html[data-theme="dark"] .spark-card:focus-visible {
+  --ink: #090909; --paper: #f5f0eb; --manifest-muted: #57534f;
+  --manifest-rule: rgba(9,9,9,.2); color: #090909;
+}
+html[data-theme="dark"] .media-lightbox { background: #181716; }
+html[data-theme="dark"] .media-video-toggle { color: #090909; }
+html[data-theme="dark"] :is(.fact-source, .contact-portrait>figcaption span) { color: var(--manifest-muted); }
+@media (max-width: 800px) {
+  .theme-toggle { margin-left: auto; margin-right: 16px; }
+  .site-header .brand img { width: min(45vw, 210px); }
+}
+
+/* Contrast-safe text accents are separate from decorative brand fills. */
+:root {
+  --text-coral: #a83226; --text-lilac: #7050ad; --text-grass: #23743d;
+  --text-lagoon: #126f7b; --text-cobalt: #3156cc; --text-sun: #796000;
+  --control-border: #79716b;
+}
+html[data-theme="dark"] {
+  --text-coral: #ff6b5e; --text-lilac: #a98bf5; --text-grass: #4cc36f;
+  --text-lagoon: #3fc1d0; --text-cobalt: #809fff; --text-sun: #ffe15a;
+  --control-border: #948a82;
+}
+/* Bound the worst-case backdrop even when the animated object is black or white. */
+.manifest-home .hero-art { opacity: .3; }
+html[data-theme="dark"] .manifest-home .hero-art { opacity: .2; }
+.manifest-home .hero-content { opacity: 1 !important; }
+.about-statement .word { opacity: 1; }
+.card-number, .article-attribution, .recreation-credit { color: var(--manifest-muted); }
+.fact-source { opacity: 1; color: var(--ink); }
+html[data-theme="dark"] .fact-source { color: var(--ink); }
+html[data-theme="dark"] .capability-mobile-menu>a[aria-current="page"] { color: var(--ink); }
+.theme-toggle, .filter-bar button[data-filter], .story-read,
+.stories-controls button, .trust-pause { border-color: var(--control-border); }
+/* Two-tone rings stay visible against both accent panels and page surfaces. */
+a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible,
+.theme-toggle:focus-visible {
+  outline: 2px solid #090909; outline-offset: 3px;
+  box-shadow: 0 0 0 3px #f5f0eb, 0 0 0 5px #090909;
+}
+.search-input-row input::placeholder { color: #bdb5ae; }
+html[data-theme="dark"] .capability-card.is-peek {
+  --ink: #090909; --paper: #f5f0eb; color: #090909;
+}
+/* Muted text on saturated panels needs the same dark ink as the main copy. */
+:is(.testimonials-section, .case-cover, .case-quote, .manifest-project-note, .cap-hero) {
+  --manifest-muted: #090909;
+}
+html[data-theme="dark"] :is(.testimonials-section, .case-cover, .case-quote, .manifest-project-note, .cap-hero) {
+  --manifest-muted: #090909;
+}
+.skip-link { background: #090909; color: #f5f0eb; }
+.service-pill:hover, .service-pill:focus-visible { background: rgba(255,255,255,.18); }
+.spark-card:hover, .spark-card:focus-visible { background: var(--spark-accent); }

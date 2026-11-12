@@ -9,9 +9,30 @@
   --manifest-lilac: #a98bf5;
   --manifest-grass: #4cc36f;
   --manifest-lagoon: #3fc1d0;
-  --manifest-cobalt: #3d68f5;
+  --manifest-cobalt: #527aff;
   --manifest-sun: #ffe15a;
   --manifest-rule: rgba(9, 9, 9, .2);
+}
+
+/* A trail of brand colors, scoped to the homepage introduction. */
+.about-statement .statement-letter {
+  color: inherit;
+  transition: color 900ms ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .about-statement .statement-letter:hover {
+    color: var(--letter-highlight);
+    transition-duration: 60ms;
+  }
+}
+
+.motion-paused .about-statement .statement-letter {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-statement .statement-letter { transition: none; }
 }
 
 /* Brand and navigation */
