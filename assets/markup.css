@@ -1,0 +1,52 @@
+/* Hand-drawn emphasis: decorative only, with the original text always readable. */
+main .has-copy-mark { overflow-wrap: anywhere; }
+.copy-mark {
+  --mark-ink: var(--text-coral, #a83226);
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  isolation: isolate;
+}
+.copy-mark[data-mark="squiggle"] { --mark-ink: var(--text-lilac, #7050ad); }
+.copy-mark[data-mark="circle"] { --mark-ink: var(--text-cobalt, #3156cc); }
+.copy-mark-art {
+  position: absolute;
+  left: 0;
+  top: calc(100% - .05em);
+  width: 100%;
+  height: .19em;
+  overflow: visible;
+  pointer-events: none;
+  color: var(--mark-ink);
+}
+.copy-mark[data-mark="circle"] .copy-mark-art {
+  left: -3%;
+  top: -.06em;
+  width: 106%;
+  height: 112%;
+}
+.copy-mark-art path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: clamp(4px, .085em, 8px);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: var(--mark-length, 1000);
+  stroke-dashoffset: var(--mark-length, 1000);
+}
+.copy-mark.is-drawn .copy-mark-art path {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset .85s cubic-bezier(.35, 0, .2, 1) var(--mark-delay, 0ms);
+}
+.about-photo-hero .copy-mark { --mark-ink: #ffe15a; }
+.hero-photo .copy-mark { --mark-ink: #ffe15a; }
+.motion-paused .copy-mark-art path,
+.markup-static .copy-mark-art path { stroke-dashoffset: 0; transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .copy-mark-art path { stroke-dashoffset: 0; transition: none !important; }
+}
+@media (forced-colors: active) {
+  .copy-mark-art { color: CanvasText; }
+}

@@ -97,3 +97,18 @@ html[data-theme="dark"] :is(.testimonials-section, .case-cover, .case-quote, .ma
 .skip-link { background: #090909; color: #f5f0eb; }
 .service-pill:hover, .service-pill:focus-visible { background: rgba(255,255,255,.18); }
 .spark-card:hover, .spark-card:focus-visible { background: var(--spark-accent); }
+
+/* Animate the actual SVG letters: works over HTTP and directly from disk. */
+.site-header .nav-wordmark { display: block; width: 210px; height: auto; color: var(--ink); }
+.nav-wordmark-letter { fill: currentColor; stroke: none; animation: nav-letter-rainbow 5s linear infinite; }
+@keyframes nav-letter-rainbow {
+  0%, 6%, 100% { fill: currentColor; }
+  1%, 4% { fill: url(#nav-logo-spectrum); }
+}
+@media (max-width: 1100px) { .site-header .nav-wordmark { width: 195px; } }
+@media (max-width: 1000px) { .site-header .nav-wordmark { width: 170px; } }
+@media (max-width: 800px) { .site-header .nav-wordmark { width: min(45vw, 210px); } }
+.motion-paused .nav-wordmark-letter { animation: none; fill: currentColor; }
+@media (prefers-reduced-motion: reduce) {
+  .nav-wordmark-letter { animation: none; fill: currentColor; }
+}

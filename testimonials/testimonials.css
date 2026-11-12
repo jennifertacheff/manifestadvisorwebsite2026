@@ -94,3 +94,7 @@
   .testimonials-all .testimonial-card { min-height: 340px; border-radius: 22px; }
   .testimonials-all .testimonial-person { padding-top: 36px; }
 }
+
+.testimonial-identity { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 26px; }
+.testimonial-identity .testimonial-avatar { width: 72px; height: 72px; flex: none; object-fit: cover; border-radius: 16px; }
+.testimonial-identity .testimonial-company { width: min(100px, 45%); height: 48px; object-fit: contain; padding: 8px; background: #fff; border-radius: 8px; }

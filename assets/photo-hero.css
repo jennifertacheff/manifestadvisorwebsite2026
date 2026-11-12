@@ -5,6 +5,7 @@
   color: #fff;
 }
 .about-photo-page .site-header:not(.scrolled) .brand img { filter: brightness(0) invert(1); }
+.about-photo-page .site-header:not(.scrolled) .nav-wordmark { color: #fff; }
 .about-photo-page .site-header:not(.scrolled) .nav-button { border-color: #fff; }
 .about-photo-page .site-header:not(.scrolled) .nav-button:is(:hover, [aria-expanded="true"], [aria-current="page"]) {
   background: #fff;
