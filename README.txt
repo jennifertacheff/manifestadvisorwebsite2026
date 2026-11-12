@@ -27,10 +27,10 @@ page animations on file://, so use the local server to see those.
 No npm installation or build step is needed.
 
 HOST THE WEBSITE
-Upload the contents of this folder to any static web host. All links are
-relative, so it works at a domain root or in a subfolder (for example
-GitHub Pages at https://<user>.github.io/<repo>/). The homepage is
-index.html. Keep the folder structure intact so links,
+The production site is https://manifestadviso.rs (bare domain, no www). It is
+served from the domain root by GitHub Pages; the CNAME file holds the domain.
+All asset and page links are relative, so the site also works when opened
+locally. The homepage is index.html. Keep the folder structure intact so links,
 fonts, images, and animation assets continue to work. serve.py and the
 Mac/Windows launchers are only needed for local viewing.
 
@@ -41,51 +41,49 @@ logos, fonts, and animation data. The homepage's 3D hero shape is embedded
 (base64 GLB) in assets/hero.js. pages.json is the blog search
 index. manifest-data.js contains homepage carousel and testimonial data.
 
-The contact actions link to Manifest's existing inquiry page, booking
-scheduler, and Jen's LinkedIn profile. Those destinations require internet
-access; the site assets are included locally.
+The contact actions link to Jen's booking scheduler and LinkedIn profile.
 
-If you host this export on a different domain, update the canonical and Open
-Graph URLs in the HTML files, plus sitemap.xml and robots.txt, for that domain.
-They currently point to the GitHub Pages site at
-https://jennifertacheff.github.io/manifestadvisorwebsite2026/.
+SEO AND STRUCTURED DATA (scripts/seo_build.py)
+scripts/seo_build.py is the single source of truth for the site URL
+(SITE_URL = https://manifestadviso.rs) and for every page's title, meta
+description, canonical, Open Graph and Twitter tags, and JSON-LD. It also
+generates sitemap.xml, robots.txt, and llms.txt, and points each redirect
+stub's canonical at its target page. After changing page copy, a title, or a
+description, run:
 
-SEO: every page carries canonical, Open Graph, Twitter card, and JSON-LD
-(schema.org) tags. The social share image is assets/og-image.png; its source
-is assets/og/og-image.html (render it at 1200x630 to regenerate). The favicon
-set (assets/favicon.svg and the PNG sizes) comes from assets/og/favicon-preview.html.
+    python3 scripts/seo_build.py          # regenerate
+    python3 scripts/seo_build.py --check  # validate only
+
+The check fails on titles over 60 characters, descriptions over 155, duplicate
+titles or descriptions, pages without exactly one <h1>, wrong canonicals,
+unparseable JSON-LD, unresolved @id references, and <img> tags without alt.
+A new page must be added to PAGES in the script, or the build stops.
+
+The social share image is assets/og-image.png (1200x630); its source is
+assets/og/og-image.html. The favicon set (assets/favicon.svg and the PNG
+sizes) comes from assets/og/favicon-preview.html.
 
 BRAND SEARCH ("manifest advisors" / "manifest advisor")
-The homepage title, description, and JSON-LD lead with "Manifest Advisors"
-and list "Manifest" and "Manifest Advisor" as alternate names. Keep the name
-written exactly "Manifest Advisors" in new copy and on outside profiles.
+The homepage H1, titles, and JSON-LD lead with "Manifest Advisors" and list
+"Manifest" and "Manifest Advisor" as alternate names. Keep the name written
+exactly "Manifest Advisors" in new copy and on outside profiles, and link
+those profiles to https://manifestadviso.rs/. Several unrelated firms use
+similar names; the FAQ entry "not-affiliated", the Organization
+disambiguatingDescription, and the "Not to be confused with" section of
+llms.txt keep them apart. Edit all three together.
 
-Google shows a site name and favicon only for a domain or subdomain, not a
-subfolder like jennifertacheff.github.io/manifestadvisorwebsite2026/, and it
-only reads robots.txt at the root of a host. Ranking first for the brand
-depends on moving this site onto a domain Manifest owns:
-1. Replace the inquiry form first. The contact page and footer link to
-   https://www.manifestadviso.rs/contact-us, which is on Squarespace and goes
-   away when the domain moves.
-2. Point the domain at GitHub Pages (repo Settings > Pages > Custom domain)
-   and update the DNS records at the registrar.
-3. Swap the base URL everywhere, for example:
-       grep -rl 'https://jennifertacheff.github.io/manifestadvisorwebsite2026/' . \
-         | xargs sed -i '' 's#https://jennifertacheff.github.io/manifestadvisorwebsite2026/#https://www.manifestadviso.rs/#g'
-   Then remove the site's own domain from the Organization "sameAs" list in
-   index.html.
-4. contact-us/, home/, speaking/, growth-strategy/, coaching/, and
-   founder-coaching/ redirect the old Squarespace URLs to their new pages so
-   their search history carries over. Keep them.
-5. Verify the domain in Google Search Console and submit sitemap.xml.
+contact-us/, home/, speaking/, growth-strategy/, coaching/, founder-coaching/,
+sparks/, and en/ hold redirects from old URLs to their new pages so their
+search history carries over. Keep them.
 
 AI ANSWER ENGINES (ChatGPT, Perplexity, Claude, Google AI Overviews)
 - faq/ answers the questions people ask about Manifest in plain, quotable
-  sentences. Its FAQPage JSON-LD repeats the visible answers word for word;
-  edit both together so they never disagree.
+  sentences. Its FAQPage JSON-LD is generated from the visible answers by
+  scripts/seo_build.py, so edit the HTML and re-run the script.
 - llms.txt is a plain-text summary of the firm with links to the key pages.
-  Update its facts when the site's facts change.
-- robots.txt allows every crawler, including AI crawlers such as GPTBot,
-  OAI-SearchBot, ClaudeBot, and PerplexityBot. Keep it that way.
+  It is generated by scripts/seo_build.py; update its facts there.
+- robots.txt allows every crawler and names the AI crawlers (GPTBot,
+  OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, PerplexityBot,
+  Google-Extended, Applebot-Extended, Bingbot) explicitly. Keep it that way.
 - Microsoft Copilot, and in part ChatGPT search, draw on Bing's index, so
   also verify the site in Bing Webmaster Tools and submit sitemap.xml there.

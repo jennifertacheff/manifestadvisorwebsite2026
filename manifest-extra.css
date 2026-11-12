@@ -275,3 +275,11 @@ a.trust-mark { cursor: pointer; }
   .story-logo { width: 120px; }
   .story-campaign-photo { width: 80px; height: 60px; }
 }
+
+/* SEO/AEO pass: answer-first summaries and footer identity line. */
+.answer-summary{max-width:760px;margin:28px auto 0;font-size:clamp(17px,1.35vw,20px);line-height:1.5;letter-spacing:-.005em}
+.answer-summary-section{max-width:920px;margin:0 auto;padding-top:72px;padding-bottom:24px;text-align:center}
+.answer-summary-section .answer-summary{margin-top:0}
+.answer-summary-links{max-width:760px;margin:16px auto 0;font-size:15px;line-height:1.5}
+.answer-summary-links a{text-decoration:underline;text-underline-offset:3px}
+.footer-identity{flex:1 1 auto}

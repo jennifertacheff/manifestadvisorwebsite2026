@@ -107,7 +107,7 @@
       document.getElementById('featured-name').textContent = item.name;
       document.getElementById('featured-role').textContent = item.role;
       const avatar = document.getElementById('featured-avatar');
-      if (avatar && item.avatar) avatar.src = './assets/' + item.avatar;
+      if (avatar && item.avatar) { avatar.src = './assets/' + item.avatar; avatar.alt = 'Headshot of ' + item.name; }
       document.querySelector('.testimonial-count').textContent = String(current + 1).padStart(2, '0') + ' / ' + String(quotes.length).padStart(2, '0');
       container.classList.remove('is-changing');
       switching = false;
