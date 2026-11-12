@@ -5,7 +5,7 @@
   const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value));
   // This script lives at the site root, so its URL tells us where the site is mounted (e.g. a GitHub Pages subpath).
   const siteRoot = new URL('./', document.currentScript?.src || location.href);
-  const sparksPath = decodeURIComponent(new URL('sparks/', siteRoot).pathname).normalize('NFC');
+  const sparksPath = decodeURIComponent(new URL('blog/', siteRoot).pathname).normalize('NFC');
   const body = document.body;
   if (!body || !body.classList.contains('editorial-page')) return;
 
@@ -314,14 +314,14 @@
     if (searchClear) searchClear.hidden = searchInput.value.length === 0;
     searchResults.replaceChildren();
     searchActiveIndex = -1;
-    if (searchLoad) { searchStatus.textContent = 'Loading Sparks…'; return; }
+    if (searchLoad) { searchStatus.textContent = 'Loading posts…'; return; }
     if (searchError || !searchIndex) {
       searchStatus.textContent = 'Search is unavailable. Close and reopen to try again.';
       return;
     }
     const query = normalize(searchInput.value).trim();
     if (!query) {
-      searchStatus.textContent = 'Search ' + searchIndex.length + ' Sparks by title or topic.';
+      searchStatus.textContent = 'Search ' + searchIndex.length + ' posts by title or topic.';
       return;
     }
     const words = query.split(/\s+/);
@@ -345,8 +345,8 @@
     });
     searchResults.append(fragment);
     searchStatus.textContent = matches.length === 0 ? 'No results. Try another word or topic.'
-      : matches.length === 1 ? '1 Spark found.'
-        : matches.length + ' Sparks found.' + (matches.length > 20 ? ' Showing the first 20.' : '');
+      : matches.length === 1 ? '1 post found.'
+        : matches.length + ' posts found.' + (matches.length > 20 ? ' Showing the first 20.' : '');
   }
 
   function loadSearchIndex() {
@@ -355,7 +355,7 @@
     searchResults?.setAttribute('aria-busy', 'true');
     searchLoad = (async () => {
       try {
-        const response = await fetch(new URL('assets/sparks/search-index.json', siteRoot), { credentials: 'same-origin', cache: 'no-cache' });
+        const response = await fetch(new URL('assets/blog/search-index.json', siteRoot), { credentials: 'same-origin', cache: 'no-cache' });
         if (!response.ok) throw new Error('Search request failed');
         const records = prepareSearchIndex(await response.json());
         if (!records.length) throw new Error('Search index is empty');

@@ -1,4 +1,4 @@
-/* Shared Contact and Sparks layouts. Source typography and motion are kept local. */
+/* Shared Contact and Blog layouts. Source typography and motion are kept local. */
 .editorial-page{--page-surface:var(--editorial-surface,var(--paper));background:var(--page-surface);--line:rgba(9,9,9,.2)}
 .editorial-page .site-header.scrolled{background:var(--page-surface);backdrop-filter:none}
 .editorial-page .site-footer{background:transparent;max-width:1600px;margin:0 auto}

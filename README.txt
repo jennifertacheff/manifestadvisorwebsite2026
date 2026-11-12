@@ -22,7 +22,7 @@ The server prints the local address and normally opens http://127.0.0.1:8000/.
 Keep the terminal open while viewing the site. Press Ctrl+C to stop it.
 
 You can also double-click index.html: pages, navigation, and the 3D hero
-shape all work from disk. Browsers block the Sparks search and the service
+shape all work from disk. Browsers block the blog search and the service
 page animations on file://, so use the local server to see those.
 No npm installation or build step is needed.
 
@@ -38,7 +38,7 @@ EDIT THE WEBSITE
 Page content is in the HTML files. Shared styling is in the CSS files, and
 interactive behavior is in the JavaScript files. assets/ contains images,
 logos, fonts, and animation data. The homepage's 3D hero shape is embedded
-(base64 GLB) in assets/hero.js. pages.json is the Sparks search
+(base64 GLB) in assets/hero.js. pages.json is the blog search
 index. manifest-data.js contains homepage carousel and testimonial data.
 
 The contact actions link to Manifest's existing inquiry page, booking

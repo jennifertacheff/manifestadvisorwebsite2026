@@ -14,6 +14,27 @@
   --manifest-rule: rgba(9, 9, 9, .2);
 }
 
+/* A trail of brand colors, scoped to the homepage introduction. */
+.about-statement .statement-letter {
+  color: inherit;
+  transition: color 900ms ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .about-statement .statement-letter:hover {
+    color: var(--letter-highlight);
+    transition-duration: 60ms;
+  }
+}
+
+.motion-paused .about-statement .statement-letter {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-statement .statement-letter { transition: none; }
+}
+
 /* Brand and navigation */
 .site-header { padding-inline: 32px; }
 .brand img { width: 210px; height: auto; }
