@@ -284,6 +284,46 @@ a.trust-mark { cursor: pointer; }
 .answer-summary-links a{text-decoration:underline;text-underline-offset:3px}
 .footer-identity{flex:1 1 auto}
 
+/* Work: staggered shapes enter, cross the arch, and fade out before looping. */
+.work-hero { position: relative; isolation: isolate; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: max(760px, 100svh); padding: 220px 24px 100px; overflow: clip; }
+.work-hero > .editorial-title, .work-hero > .sparks-subtitle { position: relative; z-index: 1; }
+.work-arch { position: absolute; inset: 110px -8% 40px; pointer-events: none; }
+.work-arch-shape { position: absolute; left: var(--x); top: var(--y); width: clamp(54px, 10.5vw, 138px); aspect-ratio: 1; translate: -50% -50%; animation: work-arch-cross 24s linear infinite, work-arch-rise 24s linear infinite, work-arch-fade 24s linear infinite; animation-delay: calc(var(--i) * -4s - 2s); }
+.work-arch-shape:nth-child(1) { --x: 5%; --y: 75%; }
+.work-arch-shape:nth-child(2) { --x: 18%; --y: 30%; }
+.work-arch-shape:nth-child(3) { --x: 38%; --y: 8%; }
+.work-arch-shape:nth-child(4) { --x: 62%; --y: 8%; }
+.work-arch-shape:nth-child(5) { --x: 82%; --y: 30%; }
+.work-arch-shape:nth-child(6) { --x: 95%; --y: 75%; }
+.work-arch-shape > i { display: block; width: 100%; height: 100%; background: var(--c); clip-path: var(--shape); transform: rotate(calc(var(--i) * 23deg)); animation: work-shape-turn 32s linear infinite; animation-delay: calc(var(--i) * -4s); }
+.work-arch-shape:nth-child(even) > i { animation-direction: reverse; animation-duration: 40s; }
+@keyframes work-shape-turn { to { transform: rotate(calc(var(--i) * 23deg + 360deg)); } }
+@keyframes work-arch-cross {
+  0% { left: 3%; animation-timing-function: cubic-bezier(.333, 0, .667, .48); }
+  50% { left: 50%; animation-timing-function: cubic-bezier(.333, .52, .667, 1); }
+  100% { left: 97%; }
+}
+@keyframes work-arch-rise {
+  0% { top: 94%; animation-timing-function: cubic-bezier(.333, .52, .667, 1); }
+  50% { top: 7%; animation-timing-function: cubic-bezier(.333, 0, .667, .48); }
+  100% { top: 94%; }
+}
+@keyframes work-arch-fade {
+  0%, 100% { opacity: 0; scale: .65; }
+  8%, 92% { opacity: 1; scale: 1; }
+}
+.motion-paused .work-arch-shape, .motion-paused .work-arch-shape > i { animation-play-state: paused; }
+@media (max-width: 600px) {
+  .work-hero { min-height: max(700px, 100svh); padding: 220px 24px 110px; }
+  .work-arch { inset: 110px -5% 32px; }
+  .work-arch-shape { width: 68px; }
+  .work-hero .editorial-title { font-size: clamp(46px, 13vw, 64px); }
+  .work-hero .sparks-subtitle { max-width: 290px; margin-inline: auto; font-size: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-arch-shape, .work-arch-shape > i { animation: none; }
+}
+
 /* Contact page: a centered stage with six brand-colored geometric shapes in slow orbit behind the headline. */
 .contact-stage { position: relative; isolation: isolate; overflow: clip; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: max(760px, 100svh); padding-top: 150px; padding-bottom: 90px; text-align: center; }
 .contact-stage > .eyebrow { margin-bottom: 26px; }
