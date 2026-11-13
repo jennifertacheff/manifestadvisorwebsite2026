@@ -146,6 +146,39 @@
     document.querySelectorAll('.reveal').forEach(node => node.classList.add('is-visible'));
   }
 
+  // Contact page: brand shapes orbit behind the headline (CSS), drift toward the pointer,
+  // and the shape matching a hovered or focused topic swells into the center.
+  const orbit = document.querySelector('.contact-orbit');
+  if (orbit) {
+    const stage = orbit.parentElement;
+    const rings = [...orbit.children];
+    const isPaused = () => reduce.matches || document.body.classList.contains('motion-paused');
+    const spotlight = (active) => rings.forEach((ring, index) => {
+      ring.classList.toggle('is-active', index === active);
+      ring.classList.toggle('is-dim', active >= 0 && index !== active);
+    });
+    stage.querySelectorAll('.experience-tags a').forEach((topic, index) => {
+      const on = () => spotlight(index);
+      const off = () => spotlight(-1);
+      topic.addEventListener('pointerenter', on);
+      topic.addEventListener('focus', on);
+      topic.addEventListener('pointerleave', off);
+      topic.addEventListener('blur', off);
+    });
+    if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      stage.addEventListener('pointermove', (event) => {
+        if (isPaused()) return;
+        const box = stage.getBoundingClientRect();
+        orbit.style.setProperty('--px', `${((event.clientX - box.left) / box.width - .5) * 70}px`);
+        orbit.style.setProperty('--py', `${((event.clientY - box.top) / box.height - .5) * 50}px`);
+      });
+      stage.addEventListener('pointerleave', () => {
+        orbit.style.setProperty('--px', '0px');
+        orbit.style.setProperty('--py', '0px');
+      });
+    }
+  }
+
   // When index.html is opened straight from disk there is no server to map folder links
   // like ../work/ to ../work/index.html, so do it at click time (covers links added by scripts too).
   if (location.protocol === 'file:') {
