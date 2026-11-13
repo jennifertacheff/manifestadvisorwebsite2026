@@ -1,0 +1,26 @@
+/* The two fixed preview surfaces show how each download should be used. */
+.brand-page { padding: 175px 32px 100px; max-width: 1500px; margin-inline: auto; }
+.brand-heading { max-width: 940px; margin-bottom: 64px; }
+.brand-heading h1 { font-size: clamp(48px, 7.5vw, 108px); font-weight: 400; line-height: 1.02; letter-spacing: -.055em; margin: 24px 0; }
+.brand-intro { max-width: 640px; font-size: clamp(19px, 2vw, 25px); line-height: 1.5; color: var(--manifest-muted); }
+.brand-downloads { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.brand-asset { min-width: 0; }
+.brand-preview { display: grid; place-items: center; min-height: 300px; aspect-ratio: 1.8; padding: 48px; border: 1px solid var(--manifest-rule); }
+.brand-preview-light { background: #f5f0eb; }
+.brand-preview-dark { background: #181716; }
+.brand-preview img { width: 100%; max-width: 440px; height: auto; }
+.brand-asset-details { padding-top: 24px; }
+.brand-asset-details h2 { font-size: 28px; font-weight: 400; letter-spacing: -.025em; }
+.brand-asset-details p { margin: 10px 0 22px; color: var(--manifest-muted); line-height: 1.5; }
+.brand-download { display: inline-flex; align-items: center; gap: 36px; padding: 14px 20px; border: 1px solid var(--ink); border-radius: 999px; font: 13px/1.4 var(--mono); }
+.brand-download:hover { background: var(--ink); color: var(--paper); }
+.brand-note { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; border-top: 1px solid var(--manifest-rule); padding-top: 32px; margin-top: 72px; }
+.brand-note h2 { font-size: 28px; font-weight: 400; letter-spacing: -.025em; }
+.brand-note p { max-width: 560px; color: var(--manifest-muted); font-size: 18px; line-height: 1.6; }
+@media (max-width: 800px) {
+  .brand-page { padding: 130px 20px 64px; }
+  .brand-heading { margin-bottom: 40px; }
+  .brand-downloads { grid-template-columns: 1fr; gap: 44px; }
+  .brand-preview { min-height: 200px; padding: 32px; }
+  .brand-note { grid-template-columns: 1fr; gap: 16px; margin-top: 48px; }
+}

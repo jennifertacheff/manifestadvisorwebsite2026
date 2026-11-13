@@ -1,6 +1,8 @@
 'use strict';
 (() => {
   const root = document.documentElement;
+  const brandPage = new URL('brand/', document.currentScript.src);
+  if (location.protocol === 'file:') brandPage.pathname += 'index.html';
   const system = matchMedia('(prefers-color-scheme: dark)');
   let preference;
   try { preference = localStorage.getItem('manifest-theme'); } catch (_) {}
@@ -26,6 +28,10 @@
   });
   document.addEventListener('DOMContentLoaded', () => {
     sync();
+    document.querySelector('.site-header .brand')?.addEventListener('contextmenu', event => {
+      event.preventDefault();
+      location.assign(brandPage.href);
+    });
     document.querySelector('.theme-toggle')?.addEventListener('click', () => {
       preference = root.dataset.theme === 'dark' ? 'light' : 'dark';
       try { localStorage.setItem('manifest-theme', preference); } catch (_) {}
