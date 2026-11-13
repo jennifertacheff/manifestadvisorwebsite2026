@@ -1,6 +1,48 @@
 'use strict';
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  const workHero = document.querySelector('.work-hero');
+  if (workHero) {
+    const shapes = [...workHero.querySelectorAll('.work-arch-shape > i')];
+    const pointer = { x: 0, y: 0, sx: 0, sy: 0 };
+    let time = 0, last = 0, frame = 0, visible = true;
+    const running = () => visible && !document.hidden && !reduce.matches && !document.body.classList.contains('motion-paused');
+    const draw = () => shapes.forEach((shape, index) => {
+      // Match assets/hero.js: independent axis speeds, gentle wobble, and pointer tilt.
+      const phase = time + index * 4;
+      shape.style.transform = `rotateX(${.4 + phase * .12 + pointer.sy * .22}rad) rotateY(${-.35 + phase * .2 + pointer.sx * .32}rad) rotateZ(${Math.sin(phase * .21) * .18}rad)`;
+    });
+    const tick = now => {
+      frame = 0;
+      if (!running()) { last = 0; return; }
+      const delta = Math.min(.05, last ? (now - last) / 1000 : .016);
+      last = now;
+      time += delta;
+      const ease = 1 - Math.exp(-3.5 * delta);
+      pointer.sx += (pointer.x - pointer.sx) * ease;
+      pointer.sy += (pointer.y - pointer.sy) * ease;
+      draw();
+      frame = requestAnimationFrame(tick);
+    };
+    const sync = () => {
+      if (frame) cancelAnimationFrame(frame);
+      frame = 0;
+      last = 0;
+      if (running()) frame = requestAnimationFrame(tick);
+    };
+    window.addEventListener('pointermove', event => {
+      if (!running()) return;
+      const rect = workHero.getBoundingClientRect();
+      pointer.x = Math.max(-1, Math.min(1, (event.clientX - rect.left) / rect.width * 2 - 1));
+      pointer.y = Math.max(-1, Math.min(1, (event.clientY - rect.top) / rect.height * 2 - 1));
+    }, { passive: true });
+    reduce.addEventListener('change', sync);
+    document.addEventListener('visibilitychange', sync);
+    new MutationObserver(sync).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    new IntersectionObserver(entries => { visible = entries[0].isIntersecting; sync(); }).observe(workHero);
+    draw();
+    sync();
+  }
   const ribbon = document.querySelector('.trust-carousel');
   if (ribbon) {
     const track = ribbon.querySelector('.trust-track');
