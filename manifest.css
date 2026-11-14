@@ -472,6 +472,7 @@ a.contact-portrait:hover img, a.contact-portrait:focus-visible img { transform: 
   .manifest-intro-grid :where(p) { font-size: 22px; }
   .career-item summary { grid-template-columns: 110px minmax(0, 1fr); gap: 20px; }
   .career-item summary > .career-company { grid-column: 2; margin-top: -12px; }
+  .career-item summary > .career-role { grid-column: 2; }
   .career-item > :not(summary) { margin-left: 130px; margin-right: 20px; font-size: 17px; }
   .career-role { font-size: 25px; }
   .case-cover { min-height: 400px; gap: 65px; }

@@ -5,7 +5,7 @@
 .brand-intro { max-width: 640px; font-size: clamp(19px, 2vw, 25px); line-height: 1.5; color: var(--manifest-muted); }
 .brand-downloads { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
 .brand-asset { min-width: 0; }
-.brand-preview { display: grid; place-items: center; min-height: 300px; aspect-ratio: 1.8; padding: 48px; border: 1px solid var(--manifest-rule); }
+.brand-preview { display: grid; place-items: center; width: 100%; min-height: 300px; aspect-ratio: 1.8; padding: 48px; border: 1px solid var(--manifest-rule); }
 .brand-preview-light { background: #f5f0eb; }
 .brand-preview-dark { background: #181716; }
 .brand-preview img { width: 100%; max-width: 440px; height: auto; }

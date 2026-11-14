@@ -25,3 +25,7 @@
 
 /* Keep every navigation destination accessible on narrow tablets as well as phones. */
 @media(max-width:800px){.main-nav,.utility-nav{display:none}.mobile-menu-toggle{display:flex;flex-direction:column;justify-content:center;gap:6px;width:36px;height:40px;z-index:80}.mobile-menu-toggle span{display:block;width:25px;height:1px;background:var(--ink);transition:transform .35s var(--ease)}.mobile-menu-toggle[aria-expanded=true] span:first-child{transform:translateY(3.5px) rotate(45deg)}.mobile-menu-toggle[aria-expanded=true] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}.mobile-menu{display:flex;position:fixed;inset:0;z-index:55;padding:110px 22px 30px;background:var(--paper);flex-direction:column;gap:6px;opacity:0;visibility:hidden;clip-path:inset(0 0 100% 0);transition:opacity .3s,clip-path .65s var(--ease),visibility .65s;overflow-y:auto;overscroll-behavior:contain}.mobile-menu.open{opacity:1;visibility:visible;clip-path:inset(0 0 0 0)}.mobile-menu>a{font-size:30px;letter-spacing:-.03em;display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);transform:translateY(25px);transition:transform .65s var(--ease)}.mobile-menu.open>a{transform:none}.mobile-menu>a>span{font:12px var(--mono)}.mobile-menu-foot{margin-top:auto;padding-top:24px;font-size:10px}}
+
+/* Long unbreakable words (product names, domains, URLs) wrap instead of being
+   cut off by the clipped page gutters on narrow screens. */
+h1,h2,h3,h4,h5,h6,p,li,figcaption,blockquote,dd,dt{overflow-wrap:break-word}
