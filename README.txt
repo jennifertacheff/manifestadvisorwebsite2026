@@ -41,7 +41,7 @@ logos, fonts, and animation data. The homepage's 3D hero shape is embedded
 (base64 GLB) in assets/hero.js. pages.json is the blog search
 index. manifest-data.js contains homepage carousel and testimonial data.
 
-The contact actions link to Jen's booking scheduler and LinkedIn profile.
+The contact actions link to Jennifer's booking scheduler and LinkedIn profile.
 
 SEO AND STRUCTURED DATA (scripts/seo_build.py)
 scripts/seo_build.py is the single source of truth for the site URL

@@ -181,7 +181,7 @@
 .filter-bar button[data-filter]:hover { border-color: var(--ink); }
 .filter-bar button[data-filter].is-active, .filter-bar button[data-filter][aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: var(--paper); }
 
-/* Original slideshow, now a window into Jen's work. */
+/* Original slideshow, now a window into Jennifer's work. */
 .studios .studio-heading h2 { max-width: 12ch; text-wrap: balance; }
 .studios .studio-copy .context-note { margin-top: 22px; font-size: 13px; line-height: 1.5; }
 .studios .studio-photo { background: var(--card); }
@@ -267,7 +267,7 @@
 .manifest-jen-home .contact-people .person + .person { margin-top: 0; }
 .manifest-jen-home .person-image:focus-visible .portrait-arrow { opacity: 1; transform: none; }
 
-/* About Jen */
+/* About Jennifer */
 .manifest-intro-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, .8fr);
