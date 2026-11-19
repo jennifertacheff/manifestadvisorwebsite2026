@@ -44,7 +44,7 @@ ORG_SAME_AS = [
 PERSON_SAME_AS = [
     'https://www.linkedin.com/in/jtacheff/',
     'https://twitter.com/jenntacheff',
-    # TODO(human): confirm the X/Twitter handle is still active, and add Jen's
+    # TODO(human): confirm the X/Twitter handle is still active, and add Jennifer's
     #   Crunchbase person page, SXSW / Techstars mentor profile and speaker pages if public.
 ]
 
@@ -63,14 +63,14 @@ WEBSITE_ID = f'{SITE_URL}/#website'
 # ---------------------------------------------------------------------------
 PAGES = {
     '': dict(kind='home', crumb='Home',
-             title='Jen Tacheff’s Strategy & Growth Advisory',
-             description='Manifest Advisors is a strategy and growth advisory founded by Jen Tacheff in 2019, helping leaders launch funds, scale companies, and enter new markets.'),
-    'about/': dict(kind='about', crumb='About Jen Tacheff',
-                   title='About Jen Tacheff, Founder',
+             title='Jennifer Tacheff’s Strategy & Growth',
+             description='Manifest Advisors, founded by Jennifer Tacheff in 2019, helps leaders launch funds, scale companies, and enter new markets with strategy and growth advice.'),
+    'about/': dict(kind='about', crumb='About Jennifer Tacheff',
+                   title='About Jennifer Tacheff, Founder',
                    description='Jennifer Tacheff founded Manifest Advisors in 2019. Growth strategist, executive coach, Techstars All-Star Mentor, and UC Berkeley Haas lecturer.'),
     'contact/': dict(kind='contact', crumb='Contact',
-                     title='Contact Jen Tacheff',
-                     description='Get in touch with Manifest Advisors: connect with founder Jen Tacheff on LinkedIn to talk growth strategy, fundraising, storytelling, and leadership.'),
+                     title='Contact Jennifer Tacheff',
+                     description='Get in touch with Manifest Advisors: connect with founder Jennifer Tacheff on LinkedIn to talk growth strategy, fundraising, storytelling, and leadership.'),
     'brand/': dict(kind='page', crumb='Brand assets',
                    title='Brand Assets & Logo Downloads',
                    description='Download the Manifest wordmark for light or dark backgrounds. Transparent SVG logos for presentations, stories, and collaborations.'),
@@ -79,7 +79,7 @@ PAGES = {
                  description='Answers about Manifest Advisors: what the firm does, who founded it, who it works with, how engagements start, and how it differs from similar names.'),
     'services/': dict(kind='collection', crumb='Services',
                       title='Advisory Services for Growth & Funds',
-                      description='Five strategy services from Manifest Advisors and founder Jen Tacheff: go-to-market, funds and fundraising, brand, leadership coaching, and AI.'),
+                      description='Five strategy services from Manifest Advisors and founder Jennifer Tacheff: go-to-market, funds and fundraising, brand, leadership coaching, and AI.'),
     'services/growth-go-to-market/': dict(kind='service', crumb='Growth & Go-to-Market', service='Growth & Go-to-Market',
                                           title='Growth & Go-to-Market Strategy',
                                           description='Manifest Advisors helps founders and companies with go-to-market strategy, growth and revenue planning, fractional leadership, and new-market launches.'),
@@ -91,31 +91,31 @@ PAGES = {
                                          description='Manifest Advisors shapes positioning, messaging, founder and brand stories, and campaigns that make a complex company easy to understand.'),
     'services/leadership-coaching/': dict(kind='service', crumb='Leadership & Coaching', service='Leadership & Coaching',
                                           title='Founder & Executive Coaching',
-                                          description='Founder coaching, executive coaching, strategy sessions, and ongoing partnership with Jen Tacheff, a 2023 Techstars All-Star Mentor.'),
+                                          description='Founder coaching, executive coaching, strategy sessions, and ongoing partnership with Jennifer Tacheff, a 2023 Techstars All-Star Mentor.'),
     'services/innovation-ai/': dict(kind='service', crumb='Innovation & AI', service='Innovation & AI',
                                     title='Innovation & AI Go-to-Market',
                                     description='Manifest Advisors helps teams bring new technology to market: innovation strategy, AI go-to-market, convenings, and human-centered ecosystems.'),
     'work/': dict(kind='collection', crumb='Work',
                   title='Selected Work & Case Studies',
-                  description='Case studies from Manifest Advisors and Jen Tacheff across growth, venture, brand, leadership, innovation, and social impact.'),
+                  description='Case studies from Manifest Advisors and Jennifer Tacheff across growth, venture, brand, leadership, innovation, and social impact.'),
     'work/alana-karen/': dict(kind='case', crumb='Alana Karen',
                               title='Alana Karen: Personal Brand Case Study',
-                              description='How Jen Tacheff helped technology leader, author, and speaker Alana Karen with personal brand, marketing, and positioning.'),
+                              description='How Jennifer Tacheff helped technology leader, author, and speaker Alana Karen with personal brand, marketing, and positioning.'),
     'work/berkeley-haas/': dict(kind='case', crumb='UC Berkeley Haas',
                                 title='UC Berkeley Haas Visiting Lecturer',
-                                description='Jen Tacheff taught growth, innovation, go-to-market, and entrepreneurship workshops as a visiting lecturer at UC Berkeley Haas, 2021–2024.'),
+                                description='Jennifer Tacheff taught growth, innovation, go-to-market, and entrepreneurship workshops as a visiting lecturer at UC Berkeley Haas, 2021–2024.'),
     'work/chabot-space-science/': dict(kind='case', crumb='Chabot Space & Science Center',
                                        title='Chabot Space & Science Center Case Study',
-                                       description='Jen Tacheff led corporate relations, membership programs, speaker series, and science partnerships at Chabot Space & Science Center.'),
+                                       description='Jennifer Tacheff led corporate relations, membership programs, speaker series, and science partnerships at Chabot Space & Science Center.'),
     'work/commongenius/': dict(kind='case', crumb='CommonGenius',
                                title='CommonGenius Go-to-Market Case Study',
-                               description='As VP of Growth and Innovation at CommonGenius, Jen Tacheff led go-to-market and activations at SXSW, TechCrunch, and Collision.'),
+                               description='As VP of Growth and Innovation at CommonGenius, Jennifer Tacheff led go-to-market and activations at SXSW, TechCrunch, and Collision.'),
     'work/founder-advisory/': dict(kind='case', crumb='Founder & creative advisory',
                                    title='Founder & Creative Advisory Case Study',
-                                   description='One-to-one advisory from Jen Tacheff that helps founders clarify their stories, explore growth opportunities, and lead through change.'),
+                                   description='One-to-one advisory from Jennifer Tacheff that helps founders clarify their stories, explore growth opportunities, and lead through change.'),
     'work/girls-inc/': dict(kind='case', crumb='Girls Inc.',
                             title='Girls Inc. $20M Capital Campaign',
-                            description='Jen Tacheff led marketing and fundraising for a $20M+ capital campaign for the Girls Inc. center in downtown Oakland.'),
+                            description='Jennifer Tacheff led marketing and fundraising for a $20M+ capital campaign for the Girls Inc. center in downtown Oakland.'),
     'work/gofundme-classy/': dict(kind='case', crumb='GoFundMe / Classy',
                                   title='GoFundMe / Classy AI Go-to-Market',
                                   description='Manifest Advisors supported go-to-market for new AI and data products at GoFundMe and Classy, informing the roadmap and brand visibility.'),
@@ -124,46 +124,46 @@ PAGES = {
                                             description='Manifest Advisors turned Google Global Accelerator founder stories and new technologies into global campaigns.'),
     'work/hustle/': dict(kind='case', crumb='Hustle',
                          title='Hustle Brand & Marketing Case Study',
-                         description='As Head of Brand, Marketing and Communications at Hustle, Jen Tacheff led full-funnel campaigns, partnerships, and positioning.'),
+                         description='As Head of Brand, Marketing and Communications at Hustle, Jennifer Tacheff led full-funnel campaigns, partnerships, and positioning.'),
     'work/mothercoders/': dict(kind='case', crumb='MotherCoders',
                                title='MotherCoders Strategic Advisory',
-                               description='Jen Tacheff advised MotherCoders on fundraising, marketing, pitch decks, and leadership succession through a founder CEO transition.'),
+                               description='Jennifer Tacheff advised MotherCoders on fundraising, marketing, pitch decks, and leadership succession through a founder CEO transition.'),
     'work/noesis-humanconnections-ai/': dict(kind='case', crumb='Noēsis / HumanConnections.AI',
                                              title='Noēsis / HumanConnections.AI Case Study',
-                                             description='Jen Tacheff helped create HumanConnections.AI and led AI workshops with Harvard and the University of Cambridge as a Noēsis senior advisor.'),
+                                             description='Jennifer Tacheff helped create HumanConnections.AI and led AI workshops with Harvard and the University of Cambridge as a Noēsis senior advisor.'),
     'work/onramp/': dict(kind='case', crumb='Onramp',
                          title='Onramp Growth & Go-to-Market Case Study',
-                         description='As CMO and CGO at Onramp, Jen Tacheff led growth and go-to-market and helped win Twitch, Amazon, Google, Coinbase, and Vanguard.'),
+                         description='As CMO and CGO at Onramp, Jennifer Tacheff led growth and go-to-market and helped win Twitch, Amazon, Google, Coinbase, and Vanguard.'),
     'work/pwv-zeal-redwoodjs/': dict(kind='case', crumb='Preston-Werner Ventures / ZEAL / RedwoodJS',
                                      title='PWV, ZEAL & RedwoodJS Case Study',
                                      description='Fractional CMO and COO work for Preston-Werner Ventures, ZEAL, and RedwoodJS: developer engagement, partnerships, and the first RedwoodJS Conference.'),
     'work/the-divisible/': dict(kind='case', crumb='Jubilee Productions / THE DIVISIBLE',
                                 title='THE DIVISIBLE Film Launch Case Study',
-                                description='Jen Tacheff was associate producer and marketing advisor for THE DIVISIBLE, the first short film from Jubilee Productions.'),
+                                description='Jennifer Tacheff was associate producer and marketing advisor for THE DIVISIBLE, the first short film from Jubilee Productions.'),
     'work/the-go-game-weve/': dict(kind='case', crumb='The Go Game / Weve',
                                    title='The Go Game / Weve Case Study',
                                    description='Manifest Advisors led go-to-market for The Go Game and Weve pandemic pivot: brand relaunch, new website, and 300+ weekly demo registrations.'),
     'work/w-fund-switch/': dict(kind='case', crumb='W Fund / SWITCH',
                                 title='W Fund / SWITCH Founder Coaching',
-                                description='As partner and board member at W Fund and SWITCH, Jen Tacheff built and co-led a coaching program for founders and executives.'),
+                                description='As partner and board member at W Fund and SWITCH, Jennifer Tacheff built and co-led a coaching program for founders and executives.'),
     'work/women-who-code/': dict(kind='case', crumb='Women Who Code',
                                  title='Women Who Code Growth Case Study',
-                                 description='Jen Tacheff was VP of Partnerships and Growth on the Women Who Code founding leadership team, building a global technical community.'),
+                                 description='Jennifer Tacheff was VP of Partnerships and Growth on the Women Who Code founding leadership team, building a global technical community.'),
     'testimonials/': dict(kind='page', crumb='Testimonials',
                           title='Client Testimonials & Recommendations',
-                          description='28 recommendations from founders, executives, and collaborators who have worked with Jen Tacheff and Manifest Advisors.'),
+                          description='28 recommendations from founders, executives, and collaborators who have worked with Jennifer Tacheff and Manifest Advisors.'),
     'blog/': dict(kind='collection', crumb='Blog',
                   title='Blog: Ideas on Growth, Funds & AI',
                   description='Manifest Advisors blog: speaking and events, founder mentorship, AI and human connection, storytelling, and how engagements begin.'),
     'blog/ai-and-human-connection/': dict(kind='post', crumb='AI and human connection',
                                           title='AI and Human Connection',
-                                          description='How HumanConnections.AI brings a human question into AI development, and Jen Tacheff’s work with Noēsis, Harvard, and Cambridge.'),
+                                          description='How HumanConnections.AI brings a human question into AI development, and Jennifer Tacheff’s work with Noēsis, Harvard, and Cambridge.'),
     'blog/founder-mentorship/': dict(kind='post', crumb='Founder mentorship',
                                      title='Founder Mentorship: A Sounding Board',
-                                     description='Founders need room to think alongside the pressure to act. How Jen Tacheff mentors founders through Techstars, SXSW, and W Fund.'),
+                                     description='Founders need room to think alongside the pressure to act. How Jennifer Tacheff mentors founders through Techstars, SXSW, and W Fund.'),
     'blog/speaking-and-events/': dict(kind='post', crumb='Speaking & events',
                                       title='Speaking, Workshops & Convenings',
-                                      description='Jen Tacheff’s speaking, workshops, and convenings, from founder workshops at UC Berkeley Haas to conversations about AI and society.'),
+                                      description='Jennifer Tacheff’s speaking, workshops, and convenings, from founder workshops at UC Berkeley Haas to conversations about AI and society.'),
     'blog/stories-beyond-business/': dict(kind='post', crumb='Stories beyond business',
                                           title='Stories Beyond the Boardroom',
                                           description='How a clear story helps a founder, an author, or a creative team find its audience, with examples from Manifest Advisors’ work.'),
@@ -235,11 +235,11 @@ def sitewide_graph():
         'url': url(''),
         'logo': {'@type': 'ImageObject', 'url': url(LOGO), 'width': 512, 'height': 512},
         'image': url(OG_IMAGE),
-        'description': ('Manifest Advisors is a strategy and growth advisory firm founded by Jennifer (Jen) Tacheff in '
+        'description': ('Manifest Advisors is a strategy and growth advisory firm founded by Jennifer Tacheff in '
                         'October 2019. It works with founders, startups, venture funds, global companies, and '
                         'mission-driven organizations at critical growth moments—launching a fund, scaling a company, '
                         'or entering a new market.'),
-        'disambiguatingDescription': ('Strategy and growth advisory firm at manifestadviso.rs, founded by Jen Tacheff in 2019. '
+        'disambiguatingDescription': ('Strategy and growth advisory firm at manifestadviso.rs, founded by Jennifer Tacheff in 2019. '
                                       'Not a financial planner or registered investment adviser, and not affiliated with '
                                       'manifest-advisor.com, Manifest wealth management (manifestplanning.com), or the '
                                       'SEC-registered Manifest Advisors LLC (CRD #307739).'),
@@ -257,7 +257,7 @@ def sitewide_graph():
             for p, name in services]},
     }
     person = {
-        '@type': 'Person', '@id': PERSON_ID, 'name': 'Jennifer Tacheff', 'alternateName': 'Jen Tacheff',
+        '@type': 'Person', '@id': PERSON_ID, 'name': 'Jennifer Tacheff',
         'givenName': 'Jennifer', 'familyName': 'Tacheff',
         'jobTitle': 'Founder & CEO', 'worksFor': {'@id': ORG_ID},
         'url': url('about/'), 'image': url(PERSON_IMAGE),
@@ -477,12 +477,12 @@ def llms():
     L = lambda p: url(p)
     content = f"""# Manifest Advisors
 
-> Manifest Advisors ({SITE_URL.split('//')[1]}) is a strategy and growth advisory firm founded by Jennifer (Jen) Tacheff in October 2019. It works with founders, startups, venture funds, global companies, and mission-driven organizations at critical growth moments—launching a fund, scaling a company, or entering a new market.
+> Manifest Advisors ({SITE_URL.split('//')[1]}) is a strategy and growth advisory firm founded by Jennifer Tacheff in October 2019. It works with founders, startups, venture funds, global companies, and mission-driven organizations at critical growth moments—launching a fund, scaling a company, or entering a new market.
 
 Key facts:
 
 - Name: Manifest Advisors (also shortened to "Manifest"). Website: {L('')}. Tagline: "Your next move matters."
-- Founded: October 2019, by Jennifer (Jen) Tacheff, Founder & CEO.
+- Founded: October 2019, by Jennifer Tacheff, Founder & CEO.
 - Founder: Jennifer Tacheff, a growth strategist, ecosystem builder, startup mentor, and executive coach. She was named a 2023 Techstars All-Star Mentor, has taught as a visiting lecturer at UC Berkeley's Haas School of Business, and has served on the SXSW Board of Advisors.
 - Services: Growth & Go-to-Market, Funds & Fundraising, Brand & Storytelling, Leadership & Coaching, and Innovation & AI.
 - Engagements can take the form of strategic advice, coaching, a defined project, or fractional leadership (including fractional CMO and COO roles).
@@ -502,8 +502,8 @@ Several unrelated organizations use similar names. Manifest Advisors at {SITE_UR
 
 - [Home]({L('')}): Overview of Manifest Advisors, its five services, and selected client stories.
 - [FAQ]({L('faq/')}): Plain answers about what Manifest Advisors does, who founded it, who it works with, and how engagements start.
-- [About Jen Tacheff]({L('about/')}): Founder biography and full career history.
-- [Contact]({L('contact/')}): Connect with Jen Tacheff on LinkedIn.
+- [About Jennifer Tacheff]({L('about/')}): Founder biography and full career history.
+- [Contact]({L('contact/')}): Connect with Jennifer Tacheff on LinkedIn.
 
 ## Services
 
